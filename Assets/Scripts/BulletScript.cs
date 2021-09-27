@@ -8,8 +8,8 @@ public class BulletScript : MonoBehaviour
     [SerializeField] private Rigidbody2D _bulletRb;
     [SerializeField] private float _speedBullet = 10.0f;
     private float _aliveTimer = 3.0f;
-    private float _damage = 1f;
-   // private EnemyController _enemyController;
+   // private float _damage = 1f;
+  //  private EnemyController _enemyController;
 
     private void Awake()
     {
@@ -36,14 +36,15 @@ public class BulletScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<EnemyController>() !=null)
-        {
-            //Rigidbody2D _enemyRb = collision.gameObject.GetComponent<Rigidbody2D>();
-            //_enemyController.Health -= _damage; 
+            if (collision.gameObject.GetComponent<EnemyController>() != null)
+            {
+                //Rigidbody2D _enemyRb = collision.gameObject.GetComponent<Rigidbody2D>();
+                //_enemyController.Health -= _damage; 
 
-            //Destroy(collision.gameObject);
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
-        }
+                Destroy(gameObject);
+                Destroy(collision.gameObject);
+               
+            }
+        
     }
 }

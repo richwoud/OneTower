@@ -12,7 +12,10 @@ public class GameManager : MonoBehaviour
     private float _maxScore;
 
 
-
+    private void Awake()
+    {
+        _enemyController = GameObject.Find("EnemyController").GetComponent<EnemyController>();
+    }
 
 
 
