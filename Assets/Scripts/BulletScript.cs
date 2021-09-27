@@ -9,14 +9,12 @@ public class BulletScript : MonoBehaviour
     [SerializeField] private float _speedBullet = 10.0f;
     private float _aliveTimer = 3.0f;
     private float _damage = 1f;
-    private EnemyController _enemyController;
+   // private EnemyController _enemyController;
 
     private void Awake()
     {
         _target = GameObject.FindGameObjectWithTag("Enemy");
-        _enemyController = GameObject.Find("EnemyController").GetComponent<EnemyController>();
-
-
+       // _enemyController = GameObject.Find("EnemyController").GetComponent<EnemyController>();
 
         if (_target == null)
         {
@@ -41,10 +39,11 @@ public class BulletScript : MonoBehaviour
         if (collision.gameObject.GetComponent<EnemyController>() !=null)
         {
             //Rigidbody2D _enemyRb = collision.gameObject.GetComponent<Rigidbody2D>();
-            _enemyController.Health -= _damage; 
+            //_enemyController.Health -= _damage; 
 
             //Destroy(collision.gameObject);
             Destroy(gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }
