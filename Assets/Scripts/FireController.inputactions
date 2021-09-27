@@ -1,0 +1,45 @@
+{
+    "name": "FireController",
+    "maps": [
+        {
+            "name": "FireOnClick",
+            "id": "e75b7a57-e2b6-4733-8284-70d2e2a43ed1",
+            "actions": [
+                {
+                    "name": "FireOnMouse",
+                    "type": "Button",
+                    "id": "00ea328c-8e1c-4e40-8fba-95ede455d7e8",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "07c9f9c8-89c1-41e4-bd71-daf973a1d267",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Mouse",
+                    "action": "FireOnMouse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Mouse",
+            "bindingGroup": "Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": true,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
