@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    
     public DifficultyEnemyType currentEnemyType; // type difficulty
-    private GameObject _playerPosition;
-    private Rigidbody2D _enemyRb;
+    private GameObject _playerPosition; // позиция игрока
+    private Rigidbody2D _enemyRb; 
     private SpawnManager _spawnManager;
     private EnemyProperty _enemyProperty;
 
@@ -15,12 +16,12 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        _enemyProperty = GameObject.Find("EnemyProperty").GetComponent<EnemyProperty>();
+        _enemyProperty = GetComponent<EnemyProperty>();
         _enemyRb = GetComponent<Rigidbody2D>();
         _playerPosition = GameObject.Find("Player");
 
     }
-    private void OnDestroy()
+    private void OnDestroy() 
     {
         int enemiesLeft = 0;
         enemiesLeft = GameObject.FindGameObjectsWithTag("Enemy").Length;
@@ -29,10 +30,6 @@ public class EnemyController : MonoBehaviour
             _spawnManager.LaunchWave();
         }
     }
-
-
-
-
 
 
     private void FixedUpdate()

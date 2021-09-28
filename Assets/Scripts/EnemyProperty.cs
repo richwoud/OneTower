@@ -7,14 +7,14 @@ public class EnemyProperty : MonoBehaviour
     [SerializeField] private float _speedEnemy;
     [SerializeField] private float _healthEnemy;
     public float Speed { get { return _speedEnemy; } set { _speedEnemy = value; } }
-    internal float Health { get { return _healthEnemy; } set { _healthEnemy = value; } }
+    public float Health { get { return _healthEnemy; } set { _healthEnemy = value; } }
     private GameManager _gameManager;
     private EnemyController _enemyController;
+    private BulletProperty _bulletProperty;
 
     private void Start()
     {
-         _enemyController = GameObject.Find("EnemyController").GetComponent<EnemyController>();
-
+        _enemyController = GetComponent<EnemyController>();
     }
 
     public void DifficultyEnemy(DifficultyEnemyType _currentEnemyType)
@@ -27,7 +27,7 @@ public class EnemyProperty : MonoBehaviour
                 CheckHealth();
                 break;
             case DifficultyEnemyType.fast:
-                Speed = 3f;
+                Speed = 2.5f;
                 Health = 1f;
                 CheckHealth();
                 break;
@@ -47,6 +47,7 @@ public class EnemyProperty : MonoBehaviour
             Destroy(gameObject);
             _gameManager._ordinaryMoney += 1;
             _gameManager._score += 100;
+
         }
     }
 
@@ -54,5 +55,13 @@ public class EnemyProperty : MonoBehaviour
     {
         DifficultyEnemy(_enemyController.currentEnemyType);
     }
-
+  
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<BulletMove>() != null)
+        {
+            
+            Health -= _bulletProperty.DamageBullet;
+        }
+    }
 }
