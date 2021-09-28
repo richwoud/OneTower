@@ -6,8 +6,8 @@ public class BulletMove : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _bulletRb;
     private GameObject _target;
-    private EnemyProperty _enemyProperty;
     [SerializeField] private BulletProperty _bulletProperty;
+   
 
     public void Awake()
     {
@@ -29,12 +29,13 @@ public class BulletMove : MonoBehaviour
     }
 
     
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<EnemyController>() != null)
+        if (collision.gameObject == _target)
         {
-             Destroy(gameObject);
+            Destroy(gameObject);
+            EnemyProperty _enemyProperty = collision.gameObject.GetComponent<EnemyProperty>();
+            _enemyProperty.TakeDamage(_bulletProperty.DamageBullet);
         }
 
     }

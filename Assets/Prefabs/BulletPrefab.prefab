@@ -147,6 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bulletRb: {fileID: 6648276588837420684}
   _bulletProperty: {fileID: 1145894736394678553}
+  collisionTag: Enemy
 --- !u!114 &1145894736394678553
 MonoBehaviour:
   m_ObjectHideFlags: 0

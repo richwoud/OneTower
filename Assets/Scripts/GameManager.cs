@@ -4,25 +4,29 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-   // private EnemyController _enemyController;
    
 
-    // добавить свойства для полей
-
-    public int _ordinaryMoney;
+    private int _ordinaryMoney;
     private int _gold;
-    public float _score;
+    private float _score;
     private float _maxScore;
+
+    public int OrdinaryMoney { get { return _ordinaryMoney; } set { _ordinaryMoney = value; } }
+    public int Gold { get { return _gold; } set { _gold = value; } }
+    public float Score { get { return _score; } set { _score = value; } }
+    public float MaxScore { get { return _maxScore; } set { _maxScore = value; } }
+
 
 
     private void Awake()
     {
-        //_enemyController = GameObject.Find("EnemyController").GetComponent<EnemyController>();
-       
-
+        
     }
-   
 
+    private void Update()
+    {
+        
+    }
 
 
 }

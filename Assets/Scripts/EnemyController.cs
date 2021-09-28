@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
         _enemyProperty = GetComponent<EnemyProperty>();
         _enemyRb = GetComponent<Rigidbody2D>();
         _playerPosition = GameObject.Find("Player");
-
+        _enemyProperty.DifficultyEnemy(currentEnemyType);
     }
     private void OnDestroy() 
     {
@@ -36,8 +36,6 @@ public class EnemyController : MonoBehaviour
     {
         Vector2 lookDirection = (_playerPosition.transform.position - transform.position).normalized;
         _enemyRb.AddForce(lookDirection * _enemyProperty.Speed);
-        _enemyProperty.DifficultyEnemy(currentEnemyType);
-
     }
 
 }
