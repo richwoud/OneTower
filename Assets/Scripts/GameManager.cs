@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-   
+    public Text _ordinaryMoneyText;
 
     private int _ordinaryMoney;
     private int _gold;
@@ -17,7 +18,6 @@ public class GameManager : MonoBehaviour
     public float MaxScore { get { return _maxScore; } set { _maxScore = value; } }
 
 
-
     private void Awake()
     {
         
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        
+       
     }
 
 
