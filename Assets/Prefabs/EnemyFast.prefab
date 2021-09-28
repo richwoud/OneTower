@@ -145,5 +145,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentEnemyType: 1
-  _speedEnemy: 0
-  _healthEnemy: 0

@@ -118,10 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068c88d2a80e83f42947da46d2acdfd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPosition: {fileID: 5008759150676348425, guid: 3cf6198f320fa0b45b7a9b48a7714765, type: 3}
-  currentEnemyType: 0
-  _speedEnemy: 0
-  _healthEnemy: 0
 --- !u!61 &3476008626030115492
 BoxCollider2D:
   m_ObjectHideFlags: 0
