@@ -10,6 +10,8 @@ public class EnemyProperty : MonoBehaviour
     public int Health { get { return _healthEnemy; } set { _healthEnemy = value; } }
     private GameManager _gameManager;
     private EnemyController _enemyController;
+    private int _addMoney = 1;
+    private int _score = 100;
     
 
     private void Start()
@@ -34,7 +36,7 @@ public class EnemyProperty : MonoBehaviour
             case DifficultyEnemyType.strong:
                 Speed = 1.5f;
                 Health = 2;
-             
+                
                 break;
             default:
                 break;
@@ -48,8 +50,7 @@ public class EnemyProperty : MonoBehaviour
         if (Health <= 0)
         {
             Destroy(gameObject);
-            _gameManager.OrdinaryMoney++;
-            _gameManager.Score += 100;
+            _gameManager.AddMoneyAndScore(_addMoney, _score);
         }
     }
 

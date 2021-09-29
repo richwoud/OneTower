@@ -38,4 +38,7 @@ public class EnemyController : MonoBehaviour
         _enemyRb.AddForce(lookDirection * _enemyProperty.Speed);
     }
 
+   
+
+
 }

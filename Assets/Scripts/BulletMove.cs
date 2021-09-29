@@ -7,11 +7,12 @@ public class BulletMove : MonoBehaviour
     [SerializeField] private Rigidbody2D _bulletRb;
     private GameObject _target;
     [SerializeField] private BulletProperty _bulletProperty;
-   
+    
 
     public void Awake()
     {
         _target = GameObject.FindGameObjectWithTag("Enemy");
+        
 
 
         if (_target == null)
@@ -24,6 +25,7 @@ public class BulletMove : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //попробовать сделать интерфейс
         Vector2 moveDirection = (_target.transform.position - transform.position).normalized;
         _bulletRb.AddForce(_bulletProperty.SpeedBullet * moveDirection);
     }
@@ -35,8 +37,12 @@ public class BulletMove : MonoBehaviour
         {
             Destroy(gameObject);
             EnemyProperty _enemyProperty = collision.gameObject.GetComponent<EnemyProperty>();
-            _enemyProperty.TakeDamage(_bulletProperty.DamageBullet);
+           _enemyProperty.TakeDamage(_bulletProperty.DamageBullet);
+            
         }
 
     }
+    
+    
+    
 }

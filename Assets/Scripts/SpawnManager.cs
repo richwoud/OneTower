@@ -18,9 +18,11 @@ public class SpawnManager : MonoBehaviour
         if (_enemiesLeftToSpawn > 0)
         {
             yield return new WaitForSeconds(_waves[_currentWaveIndex].WaveSettings[_currentEnemyIndex].SpawnDelay);
+
             Instantiate(_waves[_currentWaveIndex].WaveSettings[_currentEnemyIndex].Enemy,
                 _waves[_currentWaveIndex].WaveSettings[_currentEnemyIndex]
                 .NeededSpawner.transform.position, Quaternion.identity);
+
             _enemiesLeftToSpawn--;
             _currentEnemyIndex++;
             StartCoroutine(SpawnEnemyInWave());
