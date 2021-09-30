@@ -17,6 +17,7 @@ public class EnemyProperty : MonoBehaviour
     private void Start()
     {
         _enemyController = GetComponent<EnemyController>();
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
   
     public void DifficultyEnemy(DifficultyEnemyType _currentEnemyType)
@@ -35,23 +36,24 @@ public class EnemyProperty : MonoBehaviour
                 break;
             case DifficultyEnemyType.strong:
                 Speed = 1.5f;
-                Health = 2;
-                
+                Health = 2; 
                 break;
             default:
                 break;
         }
     }
 
-    public void TakeDamage(int _bulletDamage)
+    private void Update()
     {
-        Health -= _bulletDamage;
-
         if (Health <= 0)
         {
             Destroy(gameObject);
             _gameManager.AddMoneyAndScore(_addMoney, _score);
         }
     }
-
+    public void TakeDamage(int _bulletDamage)
+    {
+        Health -= _bulletDamage;
+    }
+  
 }

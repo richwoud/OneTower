@@ -7,11 +7,11 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    public TMP_Text _scoreText, /*_highScoreText*/ _ordinaryMoneyText;
+    public TextMeshProUGUI _scoreText, /*_highScoreText*/ _ordinaryMoneyText;
 
-    private int _ordinaryMoney = 0;
+   [SerializeField] private int _ordinaryMoney = 0;
     private int _gold;
-    private int _score = 0;
+   [SerializeField] private int _score = 0;
     private float _highScore;
 
     /// <summary>OrdinaryMoney - обычная валюта </summary>
@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public float HighScore { get { return _highScore; } set { _highScore = value; } }
 
 
-    private void Awake()
+    private void Start()
     {
         TextUIUpdate();
     }

@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     private SpawnManager _spawnManager;
     private EnemyProperty _enemyProperty;
 
-  
+
     private void Start()
     {
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
@@ -39,6 +39,9 @@ public class EnemyController : MonoBehaviour
     }
 
    
+
+
+
 
 
 }

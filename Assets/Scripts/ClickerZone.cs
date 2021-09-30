@@ -60,6 +60,8 @@ public class ClickerZone : MonoBehaviour
         _shootStatus = true;
         StopCoroutine(Reload());
     }
+
+
     private void Fire()
     {
         if (_shootStatus)

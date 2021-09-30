@@ -4,45 +4,43 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D _bulletRb;
-    private GameObject _target;
+     private Rigidbody2D _bulletRb;
+    private EnemyController _target;
     [SerializeField] private BulletProperty _bulletProperty;
-    
+   
+
 
     public void Awake()
     {
-        _target = GameObject.FindGameObjectWithTag("Enemy");
+        _bulletRb = this.GetComponent<Rigidbody2D>();
+        _target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyController>();
         
-
-
         if (_target == null)
         {
             Destroy(gameObject);
         }
         Destroy(gameObject, _bulletProperty.AliveTime);
     }
-
+    
 
     private void FixedUpdate()
     {
         //попробовать сделать интерфейс
+       
         Vector2 moveDirection = (_target.transform.position - transform.position).normalized;
         _bulletRb.AddForce(_bulletProperty.SpeedBullet * moveDirection);
+        
     }
-
-    
-    public void OnTriggerEnter2D(Collider2D collision)
+   
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject == _target)
+        if (other.GetComponent<EnemyController>() !=null)
         {
-            Destroy(gameObject);
-            EnemyProperty _enemyProperty = collision.gameObject.GetComponent<EnemyProperty>();
-           _enemyProperty.TakeDamage(_bulletProperty.DamageBullet);
-            
+            other.GetComponent<EnemyProperty>().TakeDamage(_bulletProperty.DamageBullet);
+            this.gameObject.SetActive(false);
         }
-
     }
-    
-    
-    
+
+
+
 }
