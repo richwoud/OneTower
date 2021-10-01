@@ -25,6 +25,8 @@ public class ClickerZone : MonoBehaviour, IPointerClickHandler
         Fire();
         
     }
+
+    /// <summary>Метод отвечающий за стрельбу тачпадом </summary>
     private void Fire()
     {
         if (_shootStatus)

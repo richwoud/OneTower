@@ -5,15 +5,16 @@ using UnityEngine;
 public class BulletMove : MonoBehaviour
 {
      private Rigidbody2D _bulletRb;
-    private EnemyController _target;
-    [SerializeField] private BulletProperty _bulletProperty;
+     private GameObject _target;
+     private BulletProperty _bulletProperty;
    
 
 
     public void Awake()
     {
         _bulletRb = this.GetComponent<Rigidbody2D>();
-        _target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyController>();
+        _bulletProperty = GetComponent<BulletProperty>();
+        _target = GameObject.FindGameObjectWithTag("Enemy");
         
         if (_target == null)
         {

@@ -1,42 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyProperty : MonoBehaviour
 {
     [SerializeField] private float _speedEnemy;
-    [SerializeField] private int _healthEnemy;
+    [SerializeField] private int _maxHealthEnemy;
+   [SerializeField] private int _currentHealthEnemy;
+    [SerializeField] private GameObject _healthBar;
+    [SerializeField] private Image _healthBarImage;
     public float Speed { get { return _speedEnemy; } set { _speedEnemy = value; } }
-    public int Health { get { return _healthEnemy; } set { _healthEnemy = value; } }
     private GameManager _gameManager;
     private EnemyController _enemyController;
     private int _addMoney = 1;
     private int _score = 100;
-    
 
+  
     private void Start()
-    {
+    { 
         _enemyController = GetComponent<EnemyController>();
         _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        _currentHealthEnemy = _maxHealthEnemy;
+
     }
-  
+
     public void DifficultyEnemy(DifficultyEnemyType _currentEnemyType)
     {
         switch (_currentEnemyType)
         {
             case DifficultyEnemyType.ordinary:
                 Speed = 2f;
-                Health = 1;
+                _maxHealthEnemy = 1;
                 
                 break;
             case DifficultyEnemyType.fast:
                 Speed = 2.5f;
-                Health = 1;
+                _maxHealthEnemy = 1;
                 
                 break;
             case DifficultyEnemyType.strong:
                 Speed = 1.5f;
-                Health = 2; 
+                _maxHealthEnemy = 2; 
                 break;
             default:
                 break;
@@ -45,15 +50,22 @@ public class EnemyProperty : MonoBehaviour
 
     private void Update()
     {
-        if (Health <= 0)
+
+        if (_currentHealthEnemy <= 0)
         {
             Destroy(gameObject);
             _gameManager.AddMoneyAndScore(_addMoney, _score);
         }
+
     }
+
+
+
+
     public void TakeDamage(int _bulletDamage)
     {
-        Health -= _bulletDamage;
+        _currentHealthEnemy -= _bulletDamage;
+        _healthBarImage.fillAmount = (float)_currentHealthEnemy / (float)_maxHealthEnemy;
     }
   
 }
