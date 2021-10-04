@@ -207,7 +207,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -411,5 +411,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speedEnemy: 0
+  _maxHealthEnemy: 0
+  _currentHealthEnemy: 0
   _healthBar: {fileID: 8726066423499922595}
   _healthBarImage: {fileID: 631922329508300238}
+  _outgoingText: {fileID: 4548589128726003647, guid: 3deb1993695904040b3f2cecb7d0c1cb, type: 3}

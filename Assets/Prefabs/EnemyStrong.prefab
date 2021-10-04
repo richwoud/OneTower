@@ -314,6 +314,7 @@ MonoBehaviour:
   _currentHealthEnemy: 0
   _healthBar: {fileID: 9005554441662728858}
   _healthBarImage: {fileID: 3699726589443376762}
+  _outgoingText: {fileID: 4548589128726003647, guid: 3deb1993695904040b3f2cecb7d0c1cb, type: 3}
 --- !u!1 &9005554441662728858
 GameObject:
   m_ObjectHideFlags: 0
