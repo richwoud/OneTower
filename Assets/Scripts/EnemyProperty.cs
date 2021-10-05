@@ -7,7 +7,9 @@ public class EnemyProperty : MonoBehaviour
 {
     [SerializeField] private float _speedEnemy;
     [SerializeField] private int _maxHealthEnemy;
-   [SerializeField] private int _currentHealthEnemy;
+    [SerializeField] private int _currentHealthEnemy;
+    [SerializeField] private int _enemyDamage;
+    public int EnemyDamage { get { return _enemyDamage; } set { _enemyDamage = value; } }
     [SerializeField] private GameObject _healthBar;
     [SerializeField] private Image _healthBarImage;
     public float Speed { get { return _speedEnemy; } set { _speedEnemy = value; } }
@@ -32,16 +34,17 @@ public class EnemyProperty : MonoBehaviour
             case DifficultyEnemyType.ordinary:
                 Speed = 2f;
                 _maxHealthEnemy = 1;
-                
+                EnemyDamage = 1;
                 break;
             case DifficultyEnemyType.fast:
                 Speed = 2.5f;
                 _maxHealthEnemy = 1;
-                
+                EnemyDamage = 1;
                 break;
             case DifficultyEnemyType.strong:
                 Speed = 1.5f;
-                _maxHealthEnemy = 2; 
+                _maxHealthEnemy = 2;
+                EnemyDamage = 2;
                 break;
             default:
                 break;
@@ -65,7 +68,7 @@ public class EnemyProperty : MonoBehaviour
     public void TakeDamage(int _bulletDamage)
     {
         _currentHealthEnemy -= _bulletDamage;
-        _healthBarImage.fillAmount = (float)_currentHealthEnemy / (float)_maxHealthEnemy;
+        _healthBarImage.fillAmount = (float)_currentHealthEnemy / _maxHealthEnemy;
     }
   
 }

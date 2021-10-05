@@ -7,7 +7,7 @@ public class EnemyController : MonoBehaviour
 {
     
     public DifficultyEnemyType currentEnemyType; // type difficulty
-    private GameObject _playerPosition; // позиция игрока
+    private TowerSettings _playerPosition; // позиция игрока
     private Rigidbody2D _enemyRb; 
     private SpawnManager _spawnManager;
     private EnemyProperty _enemyProperty;
@@ -18,7 +18,7 @@ public class EnemyController : MonoBehaviour
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         _enemyProperty = GetComponent<EnemyProperty>();
         _enemyRb = GetComponent<Rigidbody2D>();
-        _playerPosition = GameObject.Find("Player");
+        _playerPosition = GameObject.Find("Player").GetComponent<TowerSettings>();
         _enemyProperty.DifficultyEnemy(currentEnemyType);
     }
     private void OnDestroy() 
@@ -38,7 +38,14 @@ public class EnemyController : MonoBehaviour
         _enemyRb.AddForce(lookDirection * _enemyProperty.Speed);
     }
 
-   
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject != null)
+        {
+             _playerPosition.TakeDamageTower(_enemyProperty.EnemyDamage);
+            Destroy(gameObject);
+        }
+    }
 
 
 
