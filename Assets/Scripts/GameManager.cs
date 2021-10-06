@@ -7,7 +7,7 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-    public TextMeshProUGUI _scoreText, /*_highScoreText*/ _ordinaryMoneyText;
+    public TextMeshProUGUI _scoreText, /*_highScoreText*/ _ordinaryMoneyText, _buttonPause;
 
    [SerializeField] private int _ordinaryMoney = 0;
     private int _gold;
