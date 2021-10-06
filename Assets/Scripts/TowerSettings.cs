@@ -7,6 +7,7 @@ public class TowerSettings : MonoBehaviour
 {
     [SerializeField] private GameObject _healthBar;
     [SerializeField] private Image _healthBarImage;
+    [SerializeField] private GameObject _deathMenu;
     [SerializeField] private int _currentHealthTower;
     public int HealthTower { get { return _currentHealthTower; } set { _currentHealthTower = value; } }
     [SerializeField] private int _defenseTower;
@@ -25,6 +26,7 @@ public class TowerSettings : MonoBehaviour
         if (_currentHealthTower <= 0)
         {
             Debug.Log("GAMEOVER!!!!!!!!");
+            _deathMenu.SetActive(true);
         }
     }
    
