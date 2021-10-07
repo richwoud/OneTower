@@ -1232,6 +1232,7 @@ MonoBehaviour:
   _healthBarImage: {fileID: 162146523}
   _deathMenu: {fileID: 1162475139}
   _currentHealthTower: 0
+  _explosionPrefab: {fileID: 1928089911503157990, guid: 54164228e390d6f4fb8d6b6496053baa, type: 3}
   _defenseTower: 0
 --- !u!61 &498844494
 BoxCollider2D:

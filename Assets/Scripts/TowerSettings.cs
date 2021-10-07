@@ -9,6 +9,7 @@ public class TowerSettings : MonoBehaviour
     [SerializeField] private Image _healthBarImage;
     [SerializeField] private GameObject _deathMenu;
     [SerializeField] private int _currentHealthTower;
+    [SerializeField] private GameObject _explosionPrefab;
     public int HealthTower { get { return _currentHealthTower; } set { _currentHealthTower = value; } }
     [SerializeField] private int _defenseTower;
     public int DefenseTower { get { return _defenseTower; }set { _defenseTower = value; }}
@@ -26,10 +27,17 @@ public class TowerSettings : MonoBehaviour
         if (_currentHealthTower <= 0)
         {
             Debug.Log("GAMEOVER!!!!!!!!");
-            _deathMenu.SetActive(true);
+            var _destroyerParticle = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(_destroyerParticle, 2f);
+            StartCoroutine(TwoSeconds());
         }
     }
-   
+   IEnumerator TwoSeconds()
+    {
+        yield return new WaitForSeconds(1.2f);
+        _deathMenu.SetActive(true);
+
+    }
 
     public void TakeDamageTower(int _enemyDamage)
     {
