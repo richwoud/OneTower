@@ -103,7 +103,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -135,11 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be45e8bd0994c1c488cea6831e88ab44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletRb: {fileID: 6648276588837420684}
-  _bulletProperty: {fileID: 1145894736394678553}
-  whatIsSolid:
-    serializedVersion: 2
-    m_Bits: 129
 --- !u!114 &1145894736394678553
 MonoBehaviour:
   m_ObjectHideFlags: 0
