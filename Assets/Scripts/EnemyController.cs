@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D _enemyRb; 
     private SpawnManager _spawnManager;
     private EnemyProperty _enemyProperty;
+    private Vector2 _lookDirection;
 
 
     private void Start()
@@ -20,6 +21,7 @@ public class EnemyController : MonoBehaviour
         _enemyRb = GetComponent<Rigidbody2D>();
         _playerPosition = GameObject.Find("Player").GetComponent<TowerSettings>();
         _enemyProperty.DifficultyEnemy(currentEnemyType);
+        _lookDirection = (_playerPosition.transform.position - transform.position).normalized;
     }
     private void OnDestroy() 
     {
@@ -34,8 +36,9 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 lookDirection = (_playerPosition.transform.position - transform.position).normalized;
-        _enemyRb.AddForce(lookDirection * _enemyProperty.Speed);
+
+        _enemyRb.AddForce(_lookDirection * _enemyProperty.Speed);
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

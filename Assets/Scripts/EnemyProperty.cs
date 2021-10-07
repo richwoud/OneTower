@@ -13,6 +13,7 @@ public class EnemyProperty : MonoBehaviour
     [SerializeField] private GameObject _healthBar;
     [SerializeField] private Image _healthBarImage;
     [SerializeField] private GameObject _explosionPrefab;
+    [SerializeField] private GameObject _outgoingText;
     public float Speed { get { return _speedEnemy; } set { _speedEnemy = value; } }
     private GameManager _gameManager;
     private EnemyController _enemyController;
@@ -60,6 +61,8 @@ public class EnemyProperty : MonoBehaviour
             Destroy(gameObject);
             var _destroyerParticle = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(_destroyerParticle, 1f);
+            var _destroyerOutgoingText = Instantiate(_outgoingText, transform.position, Quaternion.identity);
+            Destroy(_destroyerOutgoingText, 1f);
             _gameManager.AddMoneyAndScore(_addMoney, _score);
         }
 
