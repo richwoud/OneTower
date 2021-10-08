@@ -12,6 +12,7 @@ public class DeathMenu : MonoBehaviour
     private void Start()
     {
         Pause();
+        PlayerPrefs.Save();
     }
 
     public void Pause()
@@ -31,9 +32,10 @@ public class DeathMenu : MonoBehaviour
 
     public void ExitMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
         _gameIsPaused = false;
         Time.timeScale = 1f;
+
     }
 
 }

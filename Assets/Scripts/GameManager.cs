@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
    [SerializeField] private int _ordinaryMoney = 0;
     private int _gold;
    [SerializeField] private int _score = 0;
-    private float _highScore;
+    private int _highScore;
 
     /// <summary>OrdinaryMoney - обычная валюта </summary>
     public int OrdinaryMoney { get { return _ordinaryMoney; } set { _ordinaryMoney = value; } }
@@ -21,9 +21,15 @@ public class GameManager : MonoBehaviour
     /// <summary> Score - счёт  </summary>
     public int Score { get { return _score; } set { _score = value; } }
     /// <summary>  HighScore - лучший счёт </summary>
-    public float HighScore { get { return _highScore; } set { _highScore = value; } }
+    public int HighScore { get { return _highScore; } set { _highScore = value; } }
 
-
+    private void Awake()
+    {
+        if (PlayerPrefs.HasKey("Highscore"))
+        {
+            HighScore = PlayerPrefs.GetInt("Highscore");
+        }
+    }
     private void Start()
     {
         TextUIUpdate();
@@ -32,10 +38,21 @@ public class GameManager : MonoBehaviour
     {
         OrdinaryMoney += _addMoney;
         Score += _addScore;
+        AddHighscore();
+    }
+    void AddHighscore()
+    {
+        if (Score > HighScore)
+        {
+            HighScore = Score;
+        }
     }
     public void FixedUpdate()
     {
         TextUIUpdate();
+        PlayerPrefs.SetInt("Score", Score);
+        PlayerPrefs.SetInt("SaveOrdinaryMoney", OrdinaryMoney);
+        PlayerPrefs.SetInt("Highscore", HighScore); 
     }
 
     void TextUIUpdate()
