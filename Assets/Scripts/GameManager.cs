@@ -8,7 +8,6 @@ using System;
 public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI _scoreText, _ordinaryMoneyText, _currentWaveText, _buttonPause;
-    private SpawnManager _spawnManager;
    [SerializeField] private int _ordinaryMoney = 0;
     private int _gold;
    [SerializeField] private int _score = 0;
@@ -26,7 +25,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         
         if (PlayerPrefs.HasKey("Highscore"))
         {
@@ -35,7 +33,6 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
-       
         TextUIUpdate();
     }
     public void AddMoneyAndScore(int _addMoney, int _addScore)
