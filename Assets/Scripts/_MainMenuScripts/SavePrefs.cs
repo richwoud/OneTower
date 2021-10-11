@@ -26,6 +26,11 @@ namespace SavePrefsName
             PlayerPrefs.SetInt("OrdinaryMoney", _saveOrdinaryMoney);
         }
         // сделать умножение денег
+        public static void MultiplyMoney(int _addOrdMoney)
+        {
+            _saveOrdinaryMoney += _addOrdMoney;
+            PlayerPrefs.SetInt("OrdinaryMoney", _saveOrdinaryMoney);
+        }
 
         void TextUIUpdate()
         {

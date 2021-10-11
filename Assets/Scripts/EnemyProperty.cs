@@ -9,12 +9,12 @@ public class EnemyProperty : MonoBehaviour
     [SerializeField] private int _maxHealthEnemy;
     [SerializeField] private int _currentHealthEnemy;
     [SerializeField] private int _enemyDamage;
-    public int EnemyDamage { get { return _enemyDamage; } set { _enemyDamage = value; } }
     [SerializeField] private GameObject _healthBar;
     [SerializeField] private Image _healthBarImage;
     [SerializeField] private GameObject _explosionPrefab;
     [SerializeField] private GameObject _outgoingText;
     public float Speed { get { return _speedEnemy; } set { _speedEnemy = value; } }
+    public int EnemyDamage { get { return _enemyDamage; } set { _enemyDamage = value; } }
     private GameManager _gameManager;
     private EnemyController _enemyController;
     private int _addMoney = 1;

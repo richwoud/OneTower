@@ -7,29 +7,29 @@ public class BulletMove : MonoBehaviour
      private Rigidbody2D _bulletRb;
      private GameObject _target;
      private BulletProperty _bulletProperty;
-   
+     private Vector2 _moveDirection;
 
 
     public void Awake()
     {
-        _bulletRb = this.GetComponent<Rigidbody2D>();
+        _bulletRb = GetComponent<Rigidbody2D>();
         _bulletProperty = GetComponent<BulletProperty>();
         _target = GameObject.FindGameObjectWithTag("Enemy");
-        
         if (_target == null)
         {
             Destroy(gameObject);
         }
+       
+        _moveDirection = (_target.transform.position - transform.position).normalized;
+
         Destroy(gameObject, _bulletProperty.AliveTime);
     }
-    
+ 
+
 
     private void FixedUpdate()
     {
-        //попробовать сделать интерфейс
-       
-        Vector2 moveDirection = (_target.transform.position - transform.position).normalized;
-        _bulletRb.AddForce(_bulletProperty.SpeedBullet * moveDirection);
+        _bulletRb.AddForce(_bulletProperty.SpeedBullet * _moveDirection);
         
     }
    

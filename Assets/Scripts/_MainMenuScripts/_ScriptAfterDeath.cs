@@ -32,10 +32,10 @@ public class _ScriptAfterDeath : MonoBehaviour
         SavePrefs.AddMoney(_ordinaryMoney);
         SceneManager.LoadScene(0);
     }
-    public void OnBtnWatchAD_AndMultiplyMoney() // встроить рекламу
+    public void OnBtnWatchAD_AndMultiplyMoney() // встроить рекламу!!! Метод который позволяет увеличить кол-во денег на 2. Для этого необходимо посмотреть рекламу
     {
-        _ordinaryMoney *= 2; // переделать в другой класс, сделать метод
-        
+        _ordinaryMoney *= 2;
+        SavePrefs.MultiplyMoney(_ordinaryMoney);
         SceneManager.LoadScene(0);
     }
 

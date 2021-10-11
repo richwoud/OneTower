@@ -6,7 +6,9 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private Waves[] _waves;
     private int _currentEnemyIndex; // индекс текущего врага
-   [SerializeField] private int _currentWaveIndex; // номер волны
+    [SerializeField] private int _currentWaveIndex; // номер волны
+    public int CurrentWaveIndex { get => _currentWaveIndex; }
+
    [SerializeField] private int _enemiesLeftToSpawn; // число врагов, которых нужно заспавнить в этой волне
     private void Start()
     {
