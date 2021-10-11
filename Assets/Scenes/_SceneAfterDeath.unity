@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 483336237}
   - component: {fileID: 483336236}
   m_Layer: 5
-  m_Name: EnemyDeadText
+  m_Name: HighwaveText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Enemy dead
+  m_text: Highwave
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1274,7 +1274,7 @@ GameObject:
   - component: {fileID: 1703089378}
   - component: {fileID: 1703089377}
   m_Layer: 5
-  m_Name: EnemyDead
+  m_Name: Highwave
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1602,7 +1602,7 @@ MonoBehaviour:
   _highScoreText: {fileID: 1318697138}
   _ordinaryMoneyText: {fileID: 383147486}
   _scoreText: {fileID: 998038720}
-  _enemyDeadText: {fileID: 483336236}
+  _highWaveText: {fileID: 483336236}
 --- !u!1 &1936253913
 GameObject:
   m_ObjectHideFlags: 0

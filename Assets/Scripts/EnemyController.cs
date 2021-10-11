@@ -43,7 +43,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject != null)
+        if (collision.gameObject.CompareTag("Player"))
         {
              _playerPosition.TakeDamageTower(_enemyProperty.EnemyDamage);
             Destroy(gameObject);

@@ -7,24 +7,25 @@ using SavePrefsName;
 
 public class _ScriptAfterDeath : MonoBehaviour
 {
-    public TextMeshProUGUI _highScoreText, _ordinaryMoneyText, _scoreText, _enemyDeadText;
-    private int _highscore, _ordinaryMoney, _score, _enemydead;
-
-   
-
+    public TextMeshProUGUI _highScoreText, _ordinaryMoneyText, _scoreText, _highWaveText;
+    private int _highscore, _ordinaryMoney, _score, _currentWave;
+    
     // Start is called before the first frame update
     void Start()
     {
+        _currentWave = SpawnManager.CurrentWaveIndex;
         _ordinaryMoney = PlayerPrefs.GetInt("SaveOrdinaryMoney");
         _score = PlayerPrefs.GetInt("Score");
         _highscore = PlayerPrefs.GetInt("Highscore");
-
-
+        
+     
         _scoreText.text = $"SCORE: {_score}".ToString();
 
         _highScoreText.text = $"HIGHSCORE: {_highscore}".ToString();
 
         _ordinaryMoneyText.text = $"You have earned ${_ordinaryMoney}".ToString();
+
+        _highWaveText.text = $"Wave {_currentWave}".ToString();
     }
 
     public void OnBtnApply()
