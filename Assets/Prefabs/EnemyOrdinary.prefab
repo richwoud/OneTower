@@ -417,4 +417,4 @@ MonoBehaviour:
   _healthBar: {fileID: 8726066423499922595}
   _healthBarImage: {fileID: 631922329508300238}
   _explosionPrefab: {fileID: 1928089911503157990, guid: b233c7cddc676d44c974020cccdfa7f4, type: 3}
-  _outgoingText: {fileID: 3766635690861682450, guid: 72447c5093b99dd43b968fda870900e7, type: 3}
+  _outgoingText: {fileID: 142695983170992446, guid: 910826dd8257a764184d71291f578e60, type: 3}
