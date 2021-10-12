@@ -52,7 +52,7 @@ public class GameManager : MonoBehaviour
     {
         TextUIUpdate();
         PlayerPrefs.SetInt("Score", Score);
-        PlayerPrefs.SetInt("SaveOrdinaryMoney", OrdinaryMoney);
+        PlayerPrefs.SetInt("SaveOrdinaryMoney", OrdinaryMoney); // передаётся значение для экрана поражение
         PlayerPrefs.SetInt("Highscore", HighScore);
         
     }
