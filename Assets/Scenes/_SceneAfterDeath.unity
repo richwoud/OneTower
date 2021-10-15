@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 163022251}
   - component: {fileID: 163022250}
   - component: {fileID: 163022249}
+  - component: {fileID: 163022248}
   m_Layer: 5
   m_Name: _ButtonApply
   m_TagString: Untagged
@@ -162,6 +163,21 @@ RectTransform:
   m_AnchoredPosition: {x: -264, y: -496}
   m_SizeDelta: {x: 320, y: 165}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &163022248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163022246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.44705883}
+  m_EffectDistance: {x: 20, y: -20}
+  m_UseGraphicAlpha: 1
 --- !u!114 &163022249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,6 +1010,7 @@ GameObject:
   - component: {fileID: 1109711952}
   - component: {fileID: 1109711951}
   - component: {fileID: 1109711950}
+  - component: {fileID: 1109711949}
   m_Layer: 5
   m_Name: _ButtonWatchAD_MultiplyMoney
   m_TagString: Untagged
@@ -1021,6 +1038,21 @@ RectTransform:
   m_AnchoredPosition: {x: 273, y: -496}
   m_SizeDelta: {x: 320, y: 165}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1109711949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109711947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.44705883}
+  m_EffectDistance: {x: 20, y: -20}
+  m_UseGraphicAlpha: 1
 --- !u!114 &1109711950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1260,6 +1292,7 @@ GameObject:
   - component: {fileID: 1580904394}
   - component: {fileID: 1580904396}
   - component: {fileID: 1580904395}
+  - component: {fileID: 1580904397}
   m_Layer: 5
   m_Name: DefeatPanel
   m_TagString: Untagged
@@ -1284,8 +1317,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 825}
-  m_SizeDelta: {x: 0, y: -1753.78}
+  m_AnchoredPosition: {x: -1.7299805, y: 825}
+  m_SizeDelta: {x: -65.66, y: -1753.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1580904395
 MonoBehaviour:
@@ -1316,7 +1349,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 0.22
 --- !u!222 &1580904396
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1325,6 +1358,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580904393}
   m_CullTransparentMesh: 1
+--- !u!114 &1580904397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580904393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.44705883}
+  m_EffectDistance: {x: 20, y: -20}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1675773458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1800,6 +1848,7 @@ MonoBehaviour:
   _ordinaryMoneyText: {fileID: 383147486}
   _scoreText: {fileID: 998038720}
   _highWaveText: {fileID: 483336236}
+  savePrefs: {fileID: 0}
 --- !u!1 &1936253913
 GameObject:
   m_ObjectHideFlags: 0

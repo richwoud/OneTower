@@ -13,11 +13,12 @@ public class TowerSettings : MonoBehaviour
     public int HealthTower { get { return _currentHealthTower; } set { _currentHealthTower = value; } }
     [SerializeField] private int _defenseTower;
     public int DefenseTower { get { return _defenseTower; }set { _defenseTower = value; }}
-    private int _maxHealthTower = 3;
+    private int _maxHealthTower;
     private EnemyProperty _enemyProperty;
 
     private void Start()
     {
+        _maxHealthTower = PlayerPrefs.GetInt("TowerHealth");
         _currentHealthTower = _maxHealthTower;
         _enemyProperty = gameObject.GetComponent<EnemyProperty>();
     }

@@ -8,11 +8,14 @@ public class DeathMenu : MonoBehaviour
     public static bool _gameIsPaused;
 
     [SerializeField] private GameObject _deathMenuUI;
+    [SerializeField] private GameObject _pauseButton;
+
 
     private void Start()
     {
         Pause();
         PlayerPrefs.Save();
+        _pauseButton.SetActive(false);
     }
 
     public void Pause()

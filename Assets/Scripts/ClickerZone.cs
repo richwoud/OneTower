@@ -9,8 +9,13 @@ public class ClickerZone : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _bulletPrafab;
-     private float _shootDelay = 0.7f; 
-     bool _shootStatus = true;
+    [SerializeField] private float _shootDelay;
+    bool _shootStatus = true;
+
+    void Start()
+    {
+        _shootDelay =  PlayerPrefs.GetFloat("ReloadDelay");
+    }
 
     IEnumerator Reload()
     {

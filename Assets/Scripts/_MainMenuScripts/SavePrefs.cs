@@ -6,17 +6,18 @@ using UnityEngine;
 namespace SavePrefsName
 {
 
-
     public class SavePrefs : MonoBehaviour
     {
-        public TextMeshProUGUI _highScoreText, _ordinaryMoneyText;
+        public TextMeshProUGUI _highScoreText, _ordinaryMoneyText, _goldText;
         private static int _saveOrdinaryMoney;
         private int _saveHighscore;
+        private int _gold;
 
         private void Start()
         {
             if (PlayerPrefs.HasKey("OrdinaryMoney")) _saveOrdinaryMoney = PlayerPrefs.GetInt("OrdinaryMoney"); // проверка указанного ключа и установка значения в переменную
             if (PlayerPrefs.HasKey("Highscore")) _saveHighscore = PlayerPrefs.GetInt("Highscore");
+            if (PlayerPrefs.HasKey("Gold")) _gold = PlayerPrefs.GetInt("Gold");
             TextUIUpdate();
         }
 
@@ -36,6 +37,7 @@ namespace SavePrefsName
         {
             _ordinaryMoneyText.text = "$ " + _saveOrdinaryMoney.ToString();
             _highScoreText.text = "Highscore\n " + _saveHighscore.ToString();
+            _goldText.text = _gold.ToString();
         }
     }
 }
