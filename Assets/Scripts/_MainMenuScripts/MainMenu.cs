@@ -6,8 +6,6 @@ public class MainMenu : MonoBehaviour
 {
    private GlobalSettings _globalSettings;
 
-
-
     private void Start()
     {
         _globalSettings = GetComponent<GlobalSettings>();
@@ -20,6 +18,7 @@ public class MainMenu : MonoBehaviour
             _globalSettings.TowerHealth = PlayerPrefs.GetInt("TowerHealth");
             _globalSettings.TowerShield = PlayerPrefs.GetInt("TowerShield");
             _globalSettings.ReloadDelay = PlayerPrefs.GetInt("ReloadDelay");
+            GlobalSettings.IsShieldActive = PlayerPrefs.GetInt("IsShieldActive") == 1 ? true : false;
         }
         else
         {
@@ -39,6 +38,9 @@ public class MainMenu : MonoBehaviour
         PlayerPrefs.SetInt("TowerShield", _globalSettings.TowerShield);
         _globalSettings.ReloadDelay = 0.7f;
         PlayerPrefs.SetFloat("ReloadDelay", _globalSettings.ReloadDelay);
+        GlobalSettings.IsShieldActive = false;
+         PlayerPrefs.SetInt("IsShieldActive", GlobalSettings.IsShieldActive ? 1 : 0);
+        PlayerPrefs.Save();
 
     }
 }

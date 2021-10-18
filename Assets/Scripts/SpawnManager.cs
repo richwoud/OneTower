@@ -6,14 +6,22 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private Waves[] _waves;
     private int _currentEnemyIndex; // индекс текущего врага
-    [SerializeField] private static int _currentWaveIndex; // номер волны
-    public static int CurrentWaveIndex { get => _currentWaveIndex; }
+    [SerializeField] private int _currentWaveIndex; // номер волны
+    public int CurrentWaveIndex { get => _currentWaveIndex; }
 
    [SerializeField] private int _enemiesLeftToSpawn; // число врагов, которых нужно заспавнить в этой волне
+
     private void Start()
     {
+        PlayerPrefs.SetInt("CurrentWaveIndex", CurrentWaveIndex);
+
         _enemiesLeftToSpawn = _waves[0].WaveSettings.Length;
         LaunchWave();
+    }
+    private void Update()
+    {
+        PlayerPrefs.SetInt("CurrentWaveIndex", CurrentWaveIndex);
+
     }
     private IEnumerator SpawnEnemyInWave()
     {
@@ -44,6 +52,7 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(SpawnEnemyInWave());
 
     }
+  
 }
 [System.Serializable]
 

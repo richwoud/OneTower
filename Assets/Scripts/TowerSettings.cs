@@ -5,19 +5,36 @@ using UnityEngine.UI;
 
 public class TowerSettings : MonoBehaviour
 {
+    private EnemyProperty _enemyProperty;
     [SerializeField] private GameObject _healthBar;
     [SerializeField] private Image _healthBarImage;
+    [SerializeField] private GameObject _shieldBar;
+    [SerializeField] private Image _shieldBarImage;
     [SerializeField] private GameObject _deathMenu;
+
     [SerializeField] private int _currentHealthTower;
     [SerializeField] private GameObject _explosionPrefab;
-    public int HealthTower { get { return _currentHealthTower; } set { _currentHealthTower = value; } }
-    [SerializeField] private int _defenseTower;
-    public int DefenseTower { get { return _defenseTower; }set { _defenseTower = value; }}
-    private int _maxHealthTower;
-    private EnemyProperty _enemyProperty;
+    [SerializeField] private int _maxTowerShield;
+    [SerializeField] private int _currentTowerShield;
 
+    private int _maxHealthTower;
+
+    private bool isActiveShield;
+
+    private void Awake()
+    {
+        isActiveShield = PlayerPrefs.GetInt("IsShieldActive") == 1 ? true : false;
+    }
     private void Start()
     {
+
+        if (isActiveShield)
+        {
+            _shieldBar.SetActive(true);
+            _maxTowerShield = PlayerPrefs.GetInt("TowerShield");
+            _currentTowerShield = _maxTowerShield;
+        }
+
         _maxHealthTower = PlayerPrefs.GetInt("TowerHealth");
         _currentHealthTower = _maxHealthTower;
         _enemyProperty = gameObject.GetComponent<EnemyProperty>();
@@ -33,24 +50,39 @@ public class TowerSettings : MonoBehaviour
             StartCoroutine(TwoSeconds());
         }
     }
-   IEnumerator TwoSeconds()
+  
+
+    IEnumerator TwoSeconds()
     {
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.1f);
         _deathMenu.SetActive(true);
 
     }
 
     public void TakeDamageTower(int _enemyDamage)
     {
-        _currentHealthTower -= _enemyDamage;
-        _healthBarImage.fillAmount = (float)_currentHealthTower / _maxHealthTower;
-        CheckHealth();
+        if (isActiveShield)
+        {
+            _currentTowerShield -= _enemyDamage;
+            _shieldBarImage.fillAmount = (float)_currentTowerShield / _maxTowerShield;
+
+            if (_currentTowerShield <= 0)
+            {
+                _shieldBar.SetActive(false);
+                _currentHealthTower -= _enemyDamage;
+                _healthBarImage.fillAmount = (float)_currentHealthTower / _maxHealthTower;
+                CheckHealth();
+            }
+        }
+        else
+        {
+            _currentHealthTower -= _enemyDamage;
+            _healthBarImage.fillAmount = (float)_currentHealthTower / _maxHealthTower;
+            CheckHealth();
+        }
+        
+        
     }
-
-
-
-
-
-
-
 }
+
+

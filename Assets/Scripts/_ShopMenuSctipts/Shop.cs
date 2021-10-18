@@ -13,7 +13,7 @@ public class Shop : MonoBehaviour
     GUIUpdateScript gUIUpdateScript;
     public int[] shopCosts;
     public TextMeshProUGUI[] shopBtnText;
-
+   
 
     private void Start()
     {
@@ -22,6 +22,7 @@ public class Shop : MonoBehaviour
         _towerHealthPlus = PlayerPrefs.GetInt("TowerHealth");
         _towerShieldPlus = PlayerPrefs.GetInt("TowerShield");
         _reloadDelayMinus = PlayerPrefs.GetFloat("ReloadDelay");
+        
     }
 
 
@@ -29,18 +30,39 @@ public class Shop : MonoBehaviour
     {
         if (gUIUpdateScript.ordinaryMoney>=shopCosts[index])
         {
+ 
             gUIUpdateScript.ordinaryMoney -= shopCosts[index];
             _towerHealthPlus += _plusUpgrade;
             shopCosts[index] *= 2;
             PlayerPrefs.SetInt("TowerHealth", _towerHealthPlus);
-            shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index];
+            shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
+           
         }
         else
         {
             StartCoroutine(NotEM());  
         }
     }
-    
+    public void OnBtn_TowerShieldPlus(int index)
+    {
+        if (gUIUpdateScript.ordinaryMoney >= shopCosts[index])
+        {
+            gUIUpdateScript.ordinaryMoney -= shopCosts[index];
+            _towerShieldPlus += _plusUpgrade;
+            shopCosts[index] *= 2;
+            GlobalSettings.IsShieldActive = true;
+            PlayerPrefs.SetInt("IsShieldActive", GlobalSettings.IsShieldActive ? 1 : 0);
+            PlayerPrefs.SetInt("TowerShield", _towerShieldPlus);
+            shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
+           
+        }
+        else
+        {
+            StartCoroutine(NotEM());
+        }
+    }
+  
+
     IEnumerator NotEM()
     {
         _notEnoughMoney.SetActive(true);

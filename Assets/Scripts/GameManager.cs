@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     private int _gold;
    [SerializeField] private int _score = 0;
     private int _highScore;
-    
+    private SpawnManager _spawnManager;
 
     /// <summary>OrdinaryMoney - обычная валюта </summary>
     public int OrdinaryMoney { get { return _ordinaryMoney; } set { _ordinaryMoney = value; } }
@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         TextUIUpdate();
     }
     public void AddMoneyAndScore(int _addMoney, int _addScore)
@@ -61,7 +62,7 @@ public class GameManager : MonoBehaviour
     {
         _ordinaryMoneyText.text = "$ " + OrdinaryMoney.ToString();
         _scoreText.text = "Score\n" + Score.ToString();
-        _currentWaveText.text = "Wave\n" + SpawnManager.CurrentWaveIndex.ToString();
+        _currentWaveText.text = "Wave\n" + _spawnManager.CurrentWaveIndex.ToString();
     }
 
 

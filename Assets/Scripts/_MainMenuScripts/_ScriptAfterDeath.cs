@@ -13,7 +13,7 @@ public class _ScriptAfterDeath : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _currentWave = SpawnManager.CurrentWaveIndex;
+        _currentWave = PlayerPrefs.GetInt("CurrentWaveIndex");
         _ordinaryMoney = PlayerPrefs.GetInt("SaveOrdinaryMoney");
         _score = PlayerPrefs.GetInt("Score");
         _highscore = PlayerPrefs.GetInt("Highscore");

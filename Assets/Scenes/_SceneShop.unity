@@ -649,7 +649,7 @@ GameObject:
   - component: {fileID: 545687234}
   - component: {fileID: 545687233}
   m_Layer: 0
-  m_Name: BuyText
+  m_Name: BuyShieldText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2268,7 +2268,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1517931008}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1847033183}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: OnBtn_TowerShieldPlus
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1517931008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2882,6 +2894,7 @@ MonoBehaviour:
   shopCosts: 6400000064000000
   shopBtnText:
   - {fileID: 1472679244}
+  - {fileID: 545687233}
 --- !u!114 &1847033184
 MonoBehaviour:
   m_ObjectHideFlags: 0
