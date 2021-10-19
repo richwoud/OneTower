@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shop : MonoBehaviour
 {
@@ -13,16 +14,19 @@ public class Shop : MonoBehaviour
     GUIUpdateScript gUIUpdateScript;
     public int[] shopCosts;
     public TextMeshProUGUI[] shopBtnText;
-   
+    [SerializeField] private GameObject _reloadBtn;
+    [SerializeField] private int maxUpgrade;
+
 
     private void Start()
     {
+        
         _notEnoughMoney.SetActive(false);
         gUIUpdateScript = GetComponent<GUIUpdateScript>();
         _towerHealthPlus = PlayerPrefs.GetInt("TowerHealth");
         _towerShieldPlus = PlayerPrefs.GetInt("TowerShield");
         _reloadDelayMinus = PlayerPrefs.GetFloat("ReloadDelay");
-        
+        maxUpgrade = PlayerPrefs.GetInt("MaxUpgrades");
     }
 
 
@@ -30,10 +34,8 @@ public class Shop : MonoBehaviour
     {
         if (gUIUpdateScript.ordinaryMoney>=shopCosts[index])
         {
- 
             gUIUpdateScript.ordinaryMoney -= shopCosts[index];
             _towerHealthPlus += _plusUpgrade;
-            shopCosts[index] *= 2;
             PlayerPrefs.SetInt("TowerHealth", _towerHealthPlus);
             shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
            
@@ -49,19 +51,42 @@ public class Shop : MonoBehaviour
         {
             gUIUpdateScript.ordinaryMoney -= shopCosts[index];
             _towerShieldPlus += _plusUpgrade;
-            shopCosts[index] *= 2;
             GlobalSettings.IsShieldActive = true;
             PlayerPrefs.SetInt("IsShieldActive", GlobalSettings.IsShieldActive ? 1 : 0);
             PlayerPrefs.SetInt("TowerShield", _towerShieldPlus);
             shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
-           
         }
         else
         {
             StartCoroutine(NotEM());
         }
     }
-  
+    public void OnBtn_ReloadDelayMinus(int index)
+    {
+
+        if (maxUpgrade <= 3)
+        { 
+            if (gUIUpdateScript.ordinaryMoney >= shopCosts[index])
+            {
+                maxUpgrade++;
+                PlayerPrefs.SetInt("MaxUpgrades", maxUpgrade);
+                gUIUpdateScript.ordinaryMoney -= shopCosts[index];
+                _reloadDelayMinus -= 0.1f;
+                PlayerPrefs.SetFloat("ReloadDelay", _reloadDelayMinus);
+                shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
+            }
+            else
+            {
+                StartCoroutine(NotEM());
+            }
+        }
+        else
+        {
+            _reloadBtn.GetComponent<Button>().interactable = false;
+        }
+
+    }
+
 
     IEnumerator NotEM()
     {
@@ -69,5 +94,9 @@ public class Shop : MonoBehaviour
         yield return new WaitForSeconds(1f);
         _notEnoughMoney.SetActive(false);
     }
+  
+
+    
+
 
 }

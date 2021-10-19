@@ -17,7 +17,7 @@ public class MainMenu : MonoBehaviour
             _globalSettings.Gold = PlayerPrefs.GetInt("Gold");
             _globalSettings.TowerHealth = PlayerPrefs.GetInt("TowerHealth");
             _globalSettings.TowerShield = PlayerPrefs.GetInt("TowerShield");
-            _globalSettings.ReloadDelay = PlayerPrefs.GetInt("ReloadDelay");
+            _globalSettings.ReloadDelay = PlayerPrefs.GetFloat("ReloadDelay");
             GlobalSettings.IsShieldActive = PlayerPrefs.GetInt("IsShieldActive") == 1 ? true : false;
         }
         else

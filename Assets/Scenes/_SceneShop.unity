@@ -696,7 +696,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Buy
 
-    $100
+    $300
 
 '
   m_isRightToLeft: 0
@@ -1712,7 +1712,7 @@ GameObject:
   - component: {fileID: 1280838811}
   - component: {fileID: 1280838810}
   m_Layer: 0
-  m_Name: BuyText
+  m_Name: BuyReloadText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1759,7 +1759,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Buy
 
-    $100
+    $800
 
 '
   m_isRightToLeft: 0
@@ -1895,7 +1895,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Buy \n$100\n"
+  m_text: "Buy \n$500\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a68b71ecaa928fd4fa3dd507d5faacbc, type: 2}
   m_sharedMaterial: {fileID: -5511459551053031122, guid: a68b71ecaa928fd4fa3dd507d5faacbc, type: 2}
@@ -2055,7 +2055,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1509889191}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1847033183}
+        m_TargetAssemblyTypeName: Shop, Assembly-CSharp
+        m_MethodName: OnBtn_ReloadDelayMinus
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1509889191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2126,7 +2138,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1516610784
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2891,10 +2903,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _notEnoughMoney: {fileID: 1516610783}
-  shopCosts: 6400000064000000
+  shopCosts: f40100002c01000020030000
   shopBtnText:
   - {fileID: 1472679244}
   - {fileID: 545687233}
+  - {fileID: 1280838810}
+  _reloadBtn: {fileID: 1509889188}
+  maxUpgrade: 0
 --- !u!114 &1847033184
 MonoBehaviour:
   m_ObjectHideFlags: 0

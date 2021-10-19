@@ -12,5 +12,9 @@ public class _ButtonsMenuScript : MonoBehaviour
     {
         SceneManager.LoadScene(3);
     }
-    
+    public void OnBtn_Stats()
+    {
+        SceneManager.LoadScene(4);
+    }
+
 }
