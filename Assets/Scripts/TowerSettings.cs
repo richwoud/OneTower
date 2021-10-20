@@ -1,24 +1,27 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class TowerSettings : MonoBehaviour
 {
     private EnemyProperty _enemyProperty;
     [SerializeField] private GameObject _healthBar;
-    [SerializeField] private Image _healthBarImage;
+    [SerializeField] internal Image _healthBarImage;
     [SerializeField] private GameObject _shieldBar;
     [SerializeField] private Image _shieldBarImage;
     [SerializeField] private GameObject _deathMenu;
 
     [SerializeField] private int _currentHealthTower;
+    public int CurrentTowerHealth { get { return _currentHealthTower; } set { _currentHealthTower = value; } }
     [SerializeField] private GameObject _explosionPrefab;
     [SerializeField] private int _maxTowerShield;
     [SerializeField] private int _currentTowerShield;
 
     private int _maxHealthTower;
+    public int MaxHealthTower { get { return _maxHealthTower; } set { _maxHealthTower = value; } }
 
+    private int _count;
     private bool isActiveShield;
 
     private void Awake()
@@ -27,7 +30,6 @@ public class TowerSettings : MonoBehaviour
     }
     private void Start()
     {
-
         if (isActiveShield)
         {
             _shieldBar.SetActive(true);
@@ -45,6 +47,7 @@ public class TowerSettings : MonoBehaviour
         if (_currentHealthTower <= 0)
         {
             Debug.Log("GAMEOVER!!!!!!!!");
+            _count++;
             var _destroyerParticle = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(_destroyerParticle, 2f);
             StartCoroutine(TwoSeconds());
@@ -55,8 +58,15 @@ public class TowerSettings : MonoBehaviour
     IEnumerator TwoSeconds()
     {
         yield return new WaitForSeconds(1.1f);
-        _deathMenu.SetActive(true);
-
+        if (_count == 1)
+        {
+            _deathMenu.SetActive(true);
+        }
+        else
+        {
+            _count =0;
+            _deathMenu.GetComponent<DeathMenu>().ExitMenu();
+        }
     }
 
     public void TakeDamageTower(int _enemyDamage)

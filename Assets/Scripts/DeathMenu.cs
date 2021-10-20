@@ -9,10 +9,13 @@ public class DeathMenu : MonoBehaviour
 
     [SerializeField] private GameObject _deathMenuUI;
     [SerializeField] private GameObject _pauseButton;
+    [SerializeField] private GameObject _player;
+    [SerializeField] private TowerSettings _towerSettings;
 
-
+   
     private void Start()
     {
+        _towerSettings = GameObject.Find("Player").GetComponent<TowerSettings>();
         Pause();
         PlayerPrefs.Save();
         _pauseButton.SetActive(false);
@@ -20,6 +23,7 @@ public class DeathMenu : MonoBehaviour
 
     public void Pause()
     {
+        _player.SetActive(false);
         _deathMenuUI.SetActive(true);
         Time.timeScale = 0f;
         _gameIsPaused = true;
@@ -28,13 +32,19 @@ public class DeathMenu : MonoBehaviour
 
     public void ContinueButton()
     {
-        _deathMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        _gameIsPaused = false;
+        //место для рекламы
+         _player.SetActive(true);
+         _towerSettings.CurrentTowerHealth += _towerSettings.MaxHealthTower;
+         _towerSettings._healthBarImage.fillAmount = _towerSettings.MaxHealthTower;
+         _deathMenuUI.SetActive(false);
+          Time.timeScale = 1f;
+          _gameIsPaused = false;
+        
     }
 
     public void ExitMenu()
     {
+        _player.SetActive(true);
         SceneManager.LoadScene(2);
         _gameIsPaused = false;
         Time.timeScale = 1f;

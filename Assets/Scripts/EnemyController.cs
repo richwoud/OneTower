@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 
@@ -36,9 +35,7 @@ public class EnemyController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         _enemyRb.AddForce(_lookDirection * _enemyProperty.Speed);
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

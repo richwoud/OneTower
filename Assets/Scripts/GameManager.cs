@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-using System;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -52,10 +49,7 @@ public class GameManager : MonoBehaviour
     public void FixedUpdate()
     {
         TextUIUpdate();
-        PlayerPrefs.SetInt("Score", Score);
-        PlayerPrefs.SetInt("SaveOrdinaryMoney", OrdinaryMoney); // передаётся значение для экрана поражение
-        PlayerPrefs.SetInt("Highscore", HighScore);
-        
+        Save(); 
     }
 
     void TextUIUpdate()
@@ -63,6 +57,12 @@ public class GameManager : MonoBehaviour
         _ordinaryMoneyText.text = "$ " + OrdinaryMoney.ToString();
         _scoreText.text = "Score\n" + Score.ToString();
         _currentWaveText.text = "Wave\n" + _spawnManager.CurrentWaveIndex.ToString();
+    }
+    void Save()
+    {
+        PlayerPrefs.SetInt("Score", Score);
+        PlayerPrefs.SetInt("SaveOrdinaryMoney", OrdinaryMoney); // передаётся значение для экрана поражение
+        PlayerPrefs.SetInt("Highscore", HighScore);
     }
 
 

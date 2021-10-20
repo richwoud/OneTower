@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -25,12 +24,6 @@ public class ClickerZone : MonoBehaviour, IPointerClickHandler
         StopCoroutine(Reload());
     }
 
-    private void Update()
-    {
-        Fire();
-        
-    }
-
     /// <summary>Метод отвечающий за стрельбу тачпадом </summary>
     private void Fire()
     {
@@ -50,7 +43,9 @@ public class ClickerZone : MonoBehaviour, IPointerClickHandler
             }
         }
     }
-
+    /// <summary>
+    /// Метод отвечающий за стрельбу мышью
+    /// </summary>
     public void OnPointerClick(PointerEventData eventData)
     {
         if (_shootStatus)
@@ -60,6 +55,15 @@ public class ClickerZone : MonoBehaviour, IPointerClickHandler
             Instantiate(_bulletPrafab, _player.transform.position, Quaternion.identity);
         }
     }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Fire();
+        }
+    }
+
 }
 
 

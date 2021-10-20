@@ -16,5 +16,9 @@ public class _ButtonsMenuScript : MonoBehaviour
     {
         SceneManager.LoadScene(4);
     }
-
+    public void OnBtn_Exit()
+    {
+        PlayerPrefs.Save();
+        Application.Quit();
+    }
 }
