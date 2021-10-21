@@ -11,6 +11,7 @@ public class DeathMenu : MonoBehaviour
     [SerializeField] private GameObject _pauseButton;
     [SerializeField] private GameObject _player;
     [SerializeField] private TowerSettings _towerSettings;
+    [SerializeField] private AudioSource _healSound;
 
    
     private void Start()
@@ -33,8 +34,10 @@ public class DeathMenu : MonoBehaviour
     public void ContinueButton()
     {
         //место для рекламы
+        
          _player.SetActive(true);
-         _towerSettings.CurrentTowerHealth += _towerSettings.MaxHealthTower;
+        _healSound.Play();
+        _towerSettings.CurrentTowerHealth += _towerSettings.MaxHealthTower;
          _towerSettings._healthBarImage.fillAmount = _towerSettings.MaxHealthTower;
          _deathMenuUI.SetActive(false);
           Time.timeScale = 1f;

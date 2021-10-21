@@ -316,7 +316,8 @@ MonoBehaviour:
   _healthBar: {fileID: 7457088167851001894}
   _healthBarImage: {fileID: 4579014493235690034}
   _explosionPrefab: {fileID: 1928089911503157990, guid: 276b391ea9c4dc841b2dbbf3b40799eb, type: 3}
-  _outgoingText: {fileID: 142695983170992446, guid: 910826dd8257a764184d71291f578e60, type: 3}
+  _outgoingText: {fileID: 142695983170992446, guid: 765eda5f7e3bb534d96737db1eafa5d7, type: 3}
+  _soundExplosion: {fileID: 0}
 --- !u!1 &7457088167851001894
 GameObject:
   m_ObjectHideFlags: 0

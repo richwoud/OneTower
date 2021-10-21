@@ -4,11 +4,12 @@ using UnityEngine.EventSystems;
 
 
 
-public class ClickerZone : MonoBehaviour, IPointerClickHandler
+public class ClickerZone : MonoBehaviour/*, IPointerClickHandler*/
 {
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _bulletPrafab;
     [SerializeField] private float _shootDelay;
+    public AudioSource shootSound;
     bool _shootStatus = true;
 
     void Start()
@@ -38,6 +39,7 @@ public class ClickerZone : MonoBehaviour, IPointerClickHandler
                         Debug.Log("Touch click");
                         StartCoroutine(Reload());
                         Instantiate(_bulletPrafab, _player.transform.position, Quaternion.identity);
+                        shootSound.Play();
                         break;
                 }
             }
@@ -46,15 +48,17 @@ public class ClickerZone : MonoBehaviour, IPointerClickHandler
     /// <summary>
     /// Метод отвечающий за стрельбу мышью
     /// </summary>
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (_shootStatus)
-        {
-            Debug.Log("CLICK mouse!!");
-            StartCoroutine(Reload());
-            Instantiate(_bulletPrafab, _player.transform.position, Quaternion.identity);
-        }
-    }
+    //public void OnPointerClick(PointerEventData eventData)
+    //{
+    //    if (_shootStatus)
+    //    {
+    //        Debug.Log("CLICK mouse!!");
+    //        StartCoroutine(Reload());
+    //        Instantiate(_bulletPrafab, _player.transform.position, Quaternion.identity);
+    //        shootSound.pitch = Random.Range(0.9f, 1.1f);
+    //        shootSound.Play();
+    //    }
+    //}
 
     private void OnTriggerStay2D(Collider2D other)
     {

@@ -17,7 +17,7 @@ public class TowerSettings : MonoBehaviour
     [SerializeField] private GameObject _explosionPrefab;
     [SerializeField] private int _maxTowerShield;
     [SerializeField] private int _currentTowerShield;
-
+    [SerializeField] private AudioSource _damageTower;
     private int _maxHealthTower;
     public int MaxHealthTower { get { return _maxHealthTower; } set { _maxHealthTower = value; } }
 
@@ -81,11 +81,13 @@ public class TowerSettings : MonoBehaviour
                 _shieldBar.SetActive(false);
                 _currentHealthTower -= _enemyDamage;
                 _healthBarImage.fillAmount = (float)_currentHealthTower / _maxHealthTower;
+                _damageTower.Play();
                 CheckHealth();
             }
         }
         else
         {
+            _damageTower.Play();
             _currentHealthTower -= _enemyDamage;
             _healthBarImage.fillAmount = (float)_currentHealthTower / _maxHealthTower;
             CheckHealth();
