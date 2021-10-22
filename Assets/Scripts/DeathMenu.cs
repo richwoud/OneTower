@@ -34,8 +34,8 @@ public class DeathMenu : MonoBehaviour
     public void ContinueButton()
     {
         //место для рекламы
-        
-         _player.SetActive(true);
+        _pauseButton.SetActive(true);
+        _player.SetActive(true);
         _healSound.Play();
         _towerSettings.CurrentTowerHealth += _towerSettings.MaxHealthTower;
          _towerSettings._healthBarImage.fillAmount = _towerSettings.MaxHealthTower;

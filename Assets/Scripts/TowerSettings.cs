@@ -18,6 +18,8 @@ public class TowerSettings : MonoBehaviour
     [SerializeField] private int _maxTowerShield;
     [SerializeField] private int _currentTowerShield;
     [SerializeField] private AudioSource _damageTower;
+ 
+
     private int _maxHealthTower;
     public int MaxHealthTower { get { return _maxHealthTower; } set { _maxHealthTower = value; } }
 
@@ -30,6 +32,7 @@ public class TowerSettings : MonoBehaviour
     }
     private void Start()
     {
+   
         if (isActiveShield)
         {
             _shieldBar.SetActive(true);
@@ -46,13 +49,14 @@ public class TowerSettings : MonoBehaviour
     {
         if (_currentHealthTower <= 0)
         {
-            Debug.Log("GAMEOVER!!!!!!!!");
+            Debug.Log("GAMEOVER!");
             _count++;
             var _destroyerParticle = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(_destroyerParticle, 2f);
             StartCoroutine(TwoSeconds());
         }
     }
+
   
 
     IEnumerator TwoSeconds()
@@ -73,17 +77,10 @@ public class TowerSettings : MonoBehaviour
     {
         if (isActiveShield)
         {
+            _damageTower.Play();
             _currentTowerShield -= _enemyDamage;
             _shieldBarImage.fillAmount = (float)_currentTowerShield / _maxTowerShield;
-
-            if (_currentTowerShield <= 0)
-            {
-                _shieldBar.SetActive(false);
-                _currentHealthTower -= _enemyDamage;
-                _healthBarImage.fillAmount = (float)_currentHealthTower / _maxHealthTower;
-                _damageTower.Play();
-                CheckHealth();
-            }
+            
         }
         else
         {
@@ -92,8 +89,14 @@ public class TowerSettings : MonoBehaviour
             _healthBarImage.fillAmount = (float)_currentHealthTower / _maxHealthTower;
             CheckHealth();
         }
+        if (_currentTowerShield <= 0)
+        {
+            _shieldBar.SetActive(false);
+            isActiveShield = false;
+        }
+           
         
-        
+
     }
 }
 

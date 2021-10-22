@@ -6,15 +6,12 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI _scoreText, _ordinaryMoneyText, _currentWaveText, _buttonPause;
    [SerializeField] private int _ordinaryMoney = 0;
-    private int _gold;
    [SerializeField] private int _score = 0;
     private int _highScore;
     private SpawnManager _spawnManager;
 
     /// <summary>OrdinaryMoney - обычная валюта </summary>
     public int OrdinaryMoney { get { return _ordinaryMoney; } set { _ordinaryMoney = value; } }
-    /// <summary>  Gold - платная валюта </summary>
-    public int Gold { get { return _gold; } set { _gold = value; } }
     /// <summary> Score - счёт  </summary>
     public int Score { get { return _score; } set { _score = value; } }
     /// <summary>  HighScore - лучший счёт </summary>

@@ -10,6 +10,7 @@ public class Shop : MonoBehaviour
     private int _plusUpgrade = 1;
     private int _towerShieldPlus;
     private float _reloadDelayMinus;
+    private float _speedBulletPlus;
     GUIUpdateScript gUIUpdateScript;
     public int[] shopCosts;
     public TextMeshProUGUI[] shopBtnText;
@@ -19,12 +20,12 @@ public class Shop : MonoBehaviour
 
     private void Start()
     {
-        
         _notEnoughMoney.SetActive(false);
         gUIUpdateScript = GetComponent<GUIUpdateScript>();
         _towerHealthPlus = PlayerPrefs.GetInt("TowerHealth");
         _towerShieldPlus = PlayerPrefs.GetInt("TowerShield");
         _reloadDelayMinus = PlayerPrefs.GetFloat("ReloadDelay");
+        _speedBulletPlus = PlayerPrefs.GetFloat("SpeedBullet");
         maxUpgrade = PlayerPrefs.GetInt("MaxUpgrades");
     }
 
@@ -84,6 +85,20 @@ public class Shop : MonoBehaviour
             _reloadBtn.GetComponent<Button>().interactable = false;
         }
 
+    }
+    public void OnBtn_SpeedBulletPlus(int index)
+    {
+        if (gUIUpdateScript.ordinaryMoney >= shopCosts[index])
+        {
+            gUIUpdateScript.ordinaryMoney -= shopCosts[index];
+            _speedBulletPlus += 1.0f;
+            PlayerPrefs.SetFloat("SpeedBullet", _speedBulletPlus);
+            shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
+        }
+        else
+        {
+            StartCoroutine(NotEM());
+        }
     }
 
 

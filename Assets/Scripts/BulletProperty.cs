@@ -2,10 +2,15 @@ using UnityEngine;
 
 public class BulletProperty : MonoBehaviour
 {
-    [SerializeField] private float _speedBullet = 10.0f;
+    [SerializeField] private float _speedBullet;
     private float _aliveTime = 3.0f;
     private int _damage = 1;
-   
+
+    private void Awake()
+    {
+        _speedBullet = PlayerPrefs.GetFloat("SpeedBullet");
+    }
+
 
     public int DamageBullet { get { return _damage; } set { _damage = value; } }
     public float SpeedBullet { get { return _speedBullet; } set { _speedBullet = value; } }
