@@ -3,20 +3,21 @@ using UnityEngine;
 
 public class GUIUpdateScript : MonoBehaviour
 {
-    public TextMeshProUGUI _ordinaryMoneyText, _goldText;
+    public TextMeshProUGUI _ordinaryMoneyText;
     
-    public int ordinaryMoney;
-    public int gold;
-    
+    private int _ordinaryMoney;
+  
+    public int OrdinaryMoney
+    {
+        get { return _ordinaryMoney; }
+        set { _ordinaryMoney = value; }
+    }
 
 
     // Start is called before the first frame update
     void Start()
     {
-       
-        ordinaryMoney = PlayerPrefs.GetInt("OrdinaryMoney");
-        gold = PlayerPrefs.GetInt("Gold");
-
+        _ordinaryMoney = PlayerPrefs.GetInt("OrdinaryMoney");
         TextUIUpdate();
     }
 
@@ -29,10 +30,7 @@ public class GUIUpdateScript : MonoBehaviour
     }
     void TextUIUpdate()
     {
-        _ordinaryMoneyText.text = "$ " + ordinaryMoney.ToString();
-        PlayerPrefs.SetInt("OrdinaryMoney", ordinaryMoney);
-        _goldText.text = "" + gold.ToString();
-        PlayerPrefs.SetInt("Gold", gold);
-
+        _ordinaryMoneyText.text = "$" + _ordinaryMoney.ToString();
+        PlayerPrefs.SetInt("OrdinaryMoney", _ordinaryMoney);
     }
 }

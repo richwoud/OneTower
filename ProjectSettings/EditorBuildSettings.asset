@@ -15,11 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/_SceneAfterDeath.unity
     guid: 39925e4fd061dba4ba9857f6e8bc1b5f
   - enabled: 1
-    path: Assets/Scenes/_SceneShop.unity
+    path: Assets/Scenes/_SceneUpgrades.unity
     guid: 60806ba3f897a3b4c8242a50bdbd010a
   - enabled: 1
     path: Assets/Scenes/_SceneStats.unity
     guid: 1efaa142f617a6d4fbabcdbc8d0adcf3
+  - enabled: 1
+    path: Assets/Scenes/_SceneShop.unity
+    guid: 44ffef743093bbc4189363f1972d6d09
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 0c8f52b7d11bbf046b00412e85805171, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: fb2ddde184f83c64ab77f45529a811a8, type: 2}

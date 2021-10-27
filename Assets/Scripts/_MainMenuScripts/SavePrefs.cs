@@ -35,8 +35,8 @@ namespace SavePrefsName
 
         void TextUIUpdate()
         {
-            _ordinaryMoneyText.text = "$ " + _saveOrdinaryMoney.ToString();
-            _highScoreText.text = "Highscore\n " + _saveHighscore.ToString();
+            _ordinaryMoneyText.text = "$" + _saveOrdinaryMoney.ToString();
+            _highScoreText.text = "Highscore\n" + _saveHighscore.ToString();
             
         }
     }

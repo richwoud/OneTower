@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject _player;
     [SerializeField] private GameObject _pauseButton;
 
+
     public void Pause_Button()
     {
         if (_gameIsPaused)
@@ -38,10 +39,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0f;
         _gameIsPaused = true;
     }
-    public void SettingsMenu()
-    {
-        Debug.Log("Settings!!!");
-    }
+
     public void ExitMenu()
     {
         SceneManager.LoadScene(0);

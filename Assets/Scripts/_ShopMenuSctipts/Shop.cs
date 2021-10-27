@@ -32,9 +32,9 @@ public class Shop : MonoBehaviour
 
     public void OnBtn_TowerHealthPlus(int index)
     {
-        if (gUIUpdateScript.ordinaryMoney>=shopCosts[index])
+        if (gUIUpdateScript.OrdinaryMoney >= shopCosts[index])
         {
-            gUIUpdateScript.ordinaryMoney -= shopCosts[index];
+            gUIUpdateScript.OrdinaryMoney -= shopCosts[index];
             _towerHealthPlus += _plusUpgrade;
             PlayerPrefs.SetInt("TowerHealth", _towerHealthPlus);
             shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
@@ -47,9 +47,9 @@ public class Shop : MonoBehaviour
     }
     public void OnBtn_TowerShieldPlus(int index)
     {
-        if (gUIUpdateScript.ordinaryMoney >= shopCosts[index])
+        if (gUIUpdateScript.OrdinaryMoney >= shopCosts[index])
         {
-            gUIUpdateScript.ordinaryMoney -= shopCosts[index];
+            gUIUpdateScript.OrdinaryMoney -= shopCosts[index];
             _towerShieldPlus += _plusUpgrade;
             GlobalSettings.IsShieldActive = true;
             PlayerPrefs.SetInt("IsShieldActive", GlobalSettings.IsShieldActive ? 1 : 0);
@@ -66,11 +66,11 @@ public class Shop : MonoBehaviour
 
         if (maxUpgrade <= 3)
         { 
-            if (gUIUpdateScript.ordinaryMoney >= shopCosts[index])
+            if (gUIUpdateScript.OrdinaryMoney >= shopCosts[index])
             {
                 maxUpgrade++;
                 PlayerPrefs.SetInt("MaxUpgrades", maxUpgrade);
-                gUIUpdateScript.ordinaryMoney -= shopCosts[index];
+                gUIUpdateScript.OrdinaryMoney -= shopCosts[index];
                 _reloadDelayMinus -= 0.1f;
                 PlayerPrefs.SetFloat("ReloadDelay", _reloadDelayMinus);
                 shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
@@ -88,9 +88,9 @@ public class Shop : MonoBehaviour
     }
     public void OnBtn_SpeedBulletPlus(int index)
     {
-        if (gUIUpdateScript.ordinaryMoney >= shopCosts[index])
+        if (gUIUpdateScript.OrdinaryMoney >= shopCosts[index])
         {
-            gUIUpdateScript.ordinaryMoney -= shopCosts[index];
+            gUIUpdateScript.OrdinaryMoney -= shopCosts[index];
             _speedBulletPlus += 1.0f;
             PlayerPrefs.SetFloat("SpeedBullet", _speedBulletPlus);
             shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();

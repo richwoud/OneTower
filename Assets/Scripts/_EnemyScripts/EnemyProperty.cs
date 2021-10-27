@@ -15,7 +15,7 @@ public class EnemyProperty : MonoBehaviour
     public int EnemyDamage { get { return _enemyDamage; } set { _enemyDamage = value; } }
     private GameManager _gameManager;
     private EnemyController _enemyController;
-    //public AudioSource _soundExplosion;
+   
     private int _addMoney;
 
     public int AddMoney
@@ -65,6 +65,27 @@ public class EnemyProperty : MonoBehaviour
                 AddMoney = 3;
                 AddScore = 300;
                 break;
+            case DifficultyEnemyType.killer:
+                Speed = 2f;
+                _maxHealthEnemy = 3;
+                EnemyDamage = 5;
+                AddMoney = 5;
+                AddScore = 500;
+                break;
+            case DifficultyEnemyType.boss1:
+                Speed = 2.5f;
+                _maxHealthEnemy = 6;
+                EnemyDamage = 10;
+                AddMoney = 30;
+                AddScore = 1000;
+                break;
+            case DifficultyEnemyType.boss2:
+                Speed = 3f;
+                _maxHealthEnemy = 5;
+                EnemyDamage = 15;
+                AddMoney = 50;
+                AddScore = 1500;
+                break;
             default:
                 break;
         }
@@ -75,7 +96,7 @@ public class EnemyProperty : MonoBehaviour
 
         if (_currentHealthEnemy <= 0)
         {
-            //_soundExplosion.Play();
+            
             Destroy(gameObject);
             var _destroyerParticle = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(_destroyerParticle, 1f);
