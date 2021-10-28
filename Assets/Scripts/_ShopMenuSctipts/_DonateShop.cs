@@ -1,9 +1,16 @@
-
 using UnityEngine;
 
 public class _DonateShop : MonoBehaviour
 {
     GUIUpdateScript gUIUpdateScript;
+
+    public static _DonateShop instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
 
     private void Start()
     {

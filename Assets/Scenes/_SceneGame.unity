@@ -1312,6 +1312,7 @@ GameObject:
   - component: {fileID: 261849794}
   - component: {fileID: 261849793}
   - component: {fileID: 261849792}
+  - component: {fileID: 261849796}
   - component: {fileID: 261849795}
   m_Layer: 5
   m_Name: ButtonContinue
@@ -1410,7 +1411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9607843, g: 0.8039216, b: 0.4745098, a: 1}
+  m_Color: {r: 1, g: 0.65882355, b: 0.003921569, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1450,6 +1451,21 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.44705883}
   m_EffectDistance: {x: 20, y: -20}
   m_UseGraphicAlpha: 1
+--- !u!114 &261849796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261849790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0059d53c67832914a87496409bdea482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _deathMenu: {fileID: 1162475141}
+  _testMode: 1
+  _adsButton: {fileID: 261849792}
 --- !u!1 &267541044
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,7 +2293,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 150
+  Priority: 128
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -4093,7 +4109,6 @@ MonoBehaviour:
   _pauseButton: {fileID: 630474346}
   _player: {fileID: 498844489}
   _towerSettings: {fileID: 498844493}
-  _healSound: {fileID: 553964977}
 --- !u!114 &1162475142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4730,8 +4745,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mixer: {fileID: 24300002, guid: 9bcffdc7f8d5b0540a9bc50bab3eb0e7, type: 2}
   _settingsPanel: {fileID: 240476773}
-  _toggle: {fileID: 0}
-  _slider: {fileID: 0}
+  _toggle: {fileID: 1719963424}
+  _slider: {fileID: 1998970866}
 --- !u!1 &1394112424
 GameObject:
   m_ObjectHideFlags: 0

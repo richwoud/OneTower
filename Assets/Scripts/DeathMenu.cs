@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +9,7 @@ public class DeathMenu : MonoBehaviour
     [SerializeField] private GameObject _pauseButton;
     [SerializeField] private GameObject _player;
     [SerializeField] private TowerSettings _towerSettings;
-    [SerializeField] private AudioSource _healSound;
+    
 
    
     private void Start()
@@ -36,13 +34,12 @@ public class DeathMenu : MonoBehaviour
         //место для рекламы
         _pauseButton.SetActive(true);
         _player.SetActive(true);
-        _healSound.Play();
         _towerSettings.CurrentTowerHealth += _towerSettings.MaxHealthTower;
          _towerSettings._healthBarImage.fillAmount = _towerSettings.MaxHealthTower;
          _deathMenuUI.SetActive(false);
-          Time.timeScale = 1f;
-          _gameIsPaused = false;
-        
+         Time.timeScale = 1f;
+
+
     }
 
     public void ExitMenu()
