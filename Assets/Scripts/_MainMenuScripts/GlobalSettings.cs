@@ -8,6 +8,7 @@ public class GlobalSettings : MonoBehaviour
     private static float _reloadDelay;
     private static float _speedBullet;
     private static int _ordinaryMoney;
+    private static int _damageBullet;
    
     private static bool isShieldActive;
 
@@ -17,6 +18,7 @@ public class GlobalSettings : MonoBehaviour
     public int TowerShield { get { return _towerShield; } set { _towerShield = value; } }
     public static bool IsShieldActive { get { return isShieldActive; } set { isShieldActive = value; } }
     public float SpeedBullet { get { return _speedBullet; } set { _speedBullet = value; } }
+    public int DamageBullet { get { return _damageBullet; } set { _damageBullet = value; } }
 
 
 

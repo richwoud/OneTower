@@ -10,7 +10,7 @@ public class MainMenu : MonoBehaviour
         _globalSettings = GetComponent<GlobalSettings>();
 
         if (PlayerPrefs.HasKey("OrdinaryMoney")  && PlayerPrefs.HasKey("TowerHealth") &&
-           PlayerPrefs.HasKey("TowerShield") && PlayerPrefs.HasKey("ReloadDelay") && PlayerPrefs.HasKey("SpeedBullet"))
+           PlayerPrefs.HasKey("TowerShield") && PlayerPrefs.HasKey("ReloadDelay") && PlayerPrefs.HasKey("SpeedBullet") && PlayerPrefs.HasKey("DamageBullet"))
         {
             _globalSettings.OrdinaryMoney = PlayerPrefs.GetInt("OrdinaryMoney");
             
@@ -18,6 +18,7 @@ public class MainMenu : MonoBehaviour
             _globalSettings.TowerShield = PlayerPrefs.GetInt("TowerShield");
             _globalSettings.ReloadDelay = PlayerPrefs.GetFloat("ReloadDelay");
             _globalSettings.SpeedBullet = PlayerPrefs.GetFloat("SpeedBullet");
+            _globalSettings.DamageBullet = PlayerPrefs.GetInt("DamageBullet");
             GlobalSettings.IsShieldActive = PlayerPrefs.GetInt("IsShieldActive") == 1 ? true : false;
         }
         else
@@ -40,6 +41,9 @@ public class MainMenu : MonoBehaviour
          PlayerPrefs.SetInt("IsShieldActive", GlobalSettings.IsShieldActive ? 1 : 0);
         _globalSettings.SpeedBullet = 10.0f;
         PlayerPrefs.SetFloat("SpeedBullet", _globalSettings.SpeedBullet);
+        _globalSettings.DamageBullet = 1;
+        PlayerPrefs.SetInt("DamageBullet", _globalSettings.DamageBullet);
+
         PlayerPrefs.Save();
 
     }

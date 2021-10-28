@@ -4,11 +4,12 @@ public class BulletProperty : MonoBehaviour
 {
     [SerializeField] private float _speedBullet;
     private float _aliveTime = 3.0f;
-    private int _damage = 1;
+    private int _damage;
 
     private void Awake()
     {
         _speedBullet = PlayerPrefs.GetFloat("SpeedBullet");
+        _damage = PlayerPrefs.GetInt("DamageBullet");
     }
 
 
