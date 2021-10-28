@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class RevardedFreeMoney : MonoBehaviour, IUnityAdsListener
 {
-    [SerializeField] private _DonateShop _donateShop;
-
     [SerializeField] private bool _testMode = true;
     [SerializeField] private Button _adsButton;
 
@@ -50,7 +48,7 @@ public class RevardedFreeMoney : MonoBehaviour, IUnityAdsListener
     {
         if (showResult == ShowResult.Finished)
         {
-            _donateShop.On_BtnWatchAD();
+            _DonateShop.instance.On_BtnWatchAD();
         }
         else if (showResult == ShowResult.Skipped)
         {
