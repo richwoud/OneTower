@@ -52,7 +52,8 @@ public class RewardedVideoInGame : MonoBehaviour, IUnityAdsListener
         if (showResult == ShowResult.Finished)
         {
             _deathMenu.ContinueButton();
-            
+           
+
         }
         else if (showResult == ShowResult.Skipped)
         {
@@ -60,6 +61,7 @@ public class RewardedVideoInGame : MonoBehaviour, IUnityAdsListener
         }
         else if (showResult == ShowResult.Failed)
         {
+            
 
         }
     }

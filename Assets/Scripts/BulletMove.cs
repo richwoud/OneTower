@@ -19,8 +19,15 @@ public class BulletMove : MonoBehaviour
         {
             Destroy(gameObject);
         }
-       
-        _moveDirection = (_target.transform.position - transform.position).normalized;
+
+        try
+        {
+            _moveDirection = (_target.transform.position - transform.position).normalized;
+        }
+        catch (System.Exception)
+        {
+            throw new System.NullReferenceException("Direction null");
+        }
 
         Destroy(gameObject, _bulletProperty.AliveTime);
     }
