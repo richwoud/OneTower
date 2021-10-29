@@ -4731,10 +4731,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40693c091fce7214681bc3b4313d7edb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Mixer: {fileID: 24300002, guid: 9bcffdc7f8d5b0540a9bc50bab3eb0e7, type: 2}
+  Master: {fileID: 0}
+  Music: {fileID: 0}
+  Effects: {fileID: 0}
   _settingsPanel: {fileID: 240476773}
-  _toggle: {fileID: 1719963424}
-  _slider: {fileID: 1998970866}
+  _toggleMusic: {fileID: 0}
+  _toggleEffects: {fileID: 0}
+  _sliderMaster: {fileID: 0}
+  _sliderMusic: {fileID: 0}
+  _sliderEffects: {fileID: 0}
 --- !u!1 &1394112424
 GameObject:
   m_ObjectHideFlags: 0
