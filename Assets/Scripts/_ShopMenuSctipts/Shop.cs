@@ -16,7 +16,10 @@ public class Shop : MonoBehaviour
     public int[] shopCosts;
     public TextMeshProUGUI[] shopBtnText;
     [SerializeField] private GameObject _reloadBtn;
-    [SerializeField] private int maxUpgrade;
+    [SerializeField] private GameObject _speedBtn;
+    [SerializeField] private int maxUpgradeReload;
+    [SerializeField] private int maxUpgradeSpeed;
+
 
 
 
@@ -29,11 +32,17 @@ public class Shop : MonoBehaviour
         _reloadDelayMinus = PlayerPrefs.GetFloat("ReloadDelay");
         _speedBulletPlus = PlayerPrefs.GetFloat("SpeedBullet");
         _damageBulletPlus = PlayerPrefs.GetInt("DamageBullet");
-        maxUpgrade = PlayerPrefs.GetInt("MaxUpgrades");
+        maxUpgradeReload = PlayerPrefs.GetInt("MaxUpgrades");
+        maxUpgradeSpeed = PlayerPrefs.GetInt("MaxUpgradeSpeed");
 
         if (PlayerPrefs.HasKey("max") == true)
         {
             _reloadBtn.GetComponent<Button>().interactable = false;
+
+        }
+        if (PlayerPrefs.HasKey("maxSpeed") == true)
+        {
+            _speedBtn.GetComponent<Button>().interactable = false;
 
         }
     }
@@ -72,12 +81,12 @@ public class Shop : MonoBehaviour
     }
     public void OnBtn_ReloadDelayMinus(int index)
     {
-        if (maxUpgrade <=3)
+        if (maxUpgradeReload <=3)
         {
             if (gUIUpdateScript.OrdinaryMoney >= shopCosts[index])
             {
-                maxUpgrade++;
-                PlayerPrefs.SetInt("MaxUpgrades", maxUpgrade);
+                maxUpgradeReload++;
+                PlayerPrefs.SetInt("MaxUpgrades", maxUpgradeReload);
                 gUIUpdateScript.OrdinaryMoney -= shopCosts[index];
                 _reloadDelayMinus -= 0.1f;
                 PlayerPrefs.SetFloat("ReloadDelay", _reloadDelayMinus);
@@ -98,16 +107,25 @@ public class Shop : MonoBehaviour
     }
     public void OnBtn_SpeedBulletPlus(int index)
     {
-        if (gUIUpdateScript.OrdinaryMoney >= shopCosts[index])
-        {
-            gUIUpdateScript.OrdinaryMoney -= shopCosts[index];
-            _speedBulletPlus += 1.0f;
-            PlayerPrefs.SetFloat("SpeedBullet", _speedBulletPlus);
-            shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
-        }
+        if (maxUpgradeSpeed <= 18)
+        { 
+            if (gUIUpdateScript.OrdinaryMoney >= shopCosts[index])
+            {
+                maxUpgradeSpeed++;
+                gUIUpdateScript.OrdinaryMoney -= shopCosts[index];
+                _speedBulletPlus += 2.0f;
+                PlayerPrefs.SetInt("MaxUpgradeSpeed", maxUpgradeSpeed);
+                PlayerPrefs.SetFloat("SpeedBullet", _speedBulletPlus);
+                shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
+            }
+            else
+            {
+                StartCoroutine(NotEM());
+            }
+         }
         else
         {
-            StartCoroutine(NotEM());
+            PlayerPrefs.SetInt("maxSpeed", 1);
         }
     }
     public void OnBtn_DamageBulletPlus(int index)

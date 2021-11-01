@@ -5,7 +5,7 @@ public class GUIUpdateScript : MonoBehaviour
 {
     public TextMeshProUGUI _ordinaryMoneyText;
     
-    private int _ordinaryMoney;
+   [SerializeField] private int _ordinaryMoney;
   
     public int OrdinaryMoney
     {

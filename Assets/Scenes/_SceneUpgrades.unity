@@ -4622,7 +4622,9 @@ MonoBehaviour:
   - {fileID: 258985261}
   - {fileID: 1624501450}
   _reloadBtn: {fileID: 1509889188}
-  maxUpgrade: 0
+  _speedBtn: {fileID: 206427248}
+  maxUpgradeReload: 0
+  maxUpgradeSpeed: 0
 --- !u!114 &1847033184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4636,6 +4638,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ordinaryMoneyText: {fileID: 30852723}
+  _ordinaryMoney: 0
 --- !u!1 &1938219099
 GameObject:
   m_ObjectHideFlags: 0
