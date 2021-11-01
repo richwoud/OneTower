@@ -32,8 +32,6 @@ AudioMixerController:
   m_ExposedParameters:
   - guid: c95622ca5e03b684fa5e63e6f6851280
     name: MusicVolume
-  - guid: a7db6f5610f1e1a4ca878b2f63e0a053
-    name: EffectsVolume
   - guid: c5edc5a9c9a84474eb5c9e11e6b2079d
     name: MasterVolume
   m_AudioMixerGroupViews:

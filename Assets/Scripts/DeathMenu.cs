@@ -14,7 +14,6 @@ public class DeathMenu : MonoBehaviour
    
     private void Start()
     {
-        _towerSettings = GameObject.Find("Player").GetComponent<TowerSettings>();
         Pause();
         PlayerPrefs.Save();
         _pauseButton.SetActive(false);

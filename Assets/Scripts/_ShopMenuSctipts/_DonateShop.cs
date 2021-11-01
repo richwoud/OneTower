@@ -17,10 +17,7 @@ public class _DonateShop : MonoBehaviour
         gUIUpdateScript = GetComponent<GUIUpdateScript>();
 
     }
-    public void On_BtnWatchAD()
-    {
-        gUIUpdateScript.OrdinaryMoney += 50;
-    }
+  
     public void On_BtnLot1()
     {
         gUIUpdateScript.OrdinaryMoney += 400;

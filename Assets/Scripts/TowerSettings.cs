@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class TowerSettings : MonoBehaviour
 {
-    private EnemyProperty _enemyProperty;
+  
     [SerializeField] private GameObject _healthBar;
     [SerializeField] internal Image _healthBarImage;
     [SerializeField] private GameObject _shieldBar;
@@ -23,12 +23,14 @@ public class TowerSettings : MonoBehaviour
     private int _maxHealthTower;
     public int MaxHealthTower { get { return _maxHealthTower; } set { _maxHealthTower = value; } }
 
-    private int _count;
+    [SerializeField] private int _continueGame;
+
     private bool isActiveShield;
 
     private void Awake()
     {
         isActiveShield = PlayerPrefs.GetInt("IsShieldActive") == 1 ? true : false;
+        
     }
     private void Start()
     {
@@ -42,7 +44,7 @@ public class TowerSettings : MonoBehaviour
 
         _maxHealthTower = PlayerPrefs.GetInt("TowerHealth");
         _currentHealthTower = _maxHealthTower;
-        _enemyProperty = gameObject.GetComponent<EnemyProperty>();
+       
     }
 
     void CheckHealth()
@@ -50,9 +52,9 @@ public class TowerSettings : MonoBehaviour
         if (_currentHealthTower <= 0)
         {
             Debug.Log("GAMEOVER!");
-            _count++;
+            _continueGame++;
             var _destroyerParticle = Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(_destroyerParticle, 2f);
+            Destroy(_destroyerParticle, 0.5f); 
             StartCoroutine(TwoSeconds());
         }
     }
@@ -61,14 +63,16 @@ public class TowerSettings : MonoBehaviour
 
     IEnumerator TwoSeconds()
     {
-        yield return new WaitForSeconds(1.1f);
-        if (_count == 1)
+       
+        yield return new WaitForSeconds(0.5f);
+        if (_continueGame == 1)
         {
-            _deathMenu.SetActive(true);
+            _deathMenu.GetComponent<DeathMenu>().Pause();
+            
         }
         else
         {
-            _count =0;
+            _continueGame = 0;
             _deathMenu.GetComponent<DeathMenu>().ExitMenu();
         }
     }

@@ -6,6 +6,7 @@ public class RevardedFreeMoney : MonoBehaviour, IUnityAdsListener
 {
     [SerializeField] private bool _testMode = true;
     [SerializeField] private Button _adsButton;
+    [SerializeField] private GUIUpdateScript gUIUpdateScript;
 
     private string _gameId = "4425063";
     private string _rewardedVideo = "Rewarded_Android";
@@ -48,7 +49,7 @@ public class RevardedFreeMoney : MonoBehaviour, IUnityAdsListener
     {
         if (showResult == ShowResult.Finished)
         {
-            _DonateShop.instance.On_BtnWatchAD();
+            gUIUpdateScript.OrdinaryMoney += 50;
         }
         else if (showResult == ShowResult.Skipped)
         {

@@ -1815,6 +1815,7 @@ MonoBehaviour:
   _maxTowerShield: 0
   _currentTowerShield: 0
   _damageTower: {fileID: 2030831284}
+  _continueGame: 0
 --- !u!61 &498844494
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3862,14 +3863,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Master: {fileID: 24300002, guid: 9bcffdc7f8d5b0540a9bc50bab3eb0e7, type: 2}
-  Music: {fileID: 2545820937549958318, guid: 9bcffdc7f8d5b0540a9bc50bab3eb0e7, type: 2}
-  Effects: {fileID: 3781642306343718989, guid: 9bcffdc7f8d5b0540a9bc50bab3eb0e7, type: 2}
   _settingsPanel: {fileID: 7391774180244460989}
   _toggleMusic: {fileID: 7391774180920916216}
-  _toggleEffects: {fileID: 4655463223287239517}
   _sliderMaster: {fileID: 7391774181162002474}
-  _sliderMusic: {fileID: 4655463223703917027}
-  _sliderEffects: {fileID: 4655463222177185907}
 --- !u!1 &1394112424
 GameObject:
   m_ObjectHideFlags: 0

@@ -1941,6 +1941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _testMode: 1
   _adsButton: {fileID: 583640428}
+  gUIUpdateScript: {fileID: 1847033184}
 --- !u!1 &610299401
 GameObject:
   m_ObjectHideFlags: 0
