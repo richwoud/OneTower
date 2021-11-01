@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Advertisements;
+using UnityEngine.UI;
 
 public class _DonateShop : MonoBehaviour
 {
@@ -6,6 +8,10 @@ public class _DonateShop : MonoBehaviour
 
     public static _DonateShop instance;
 
+    [SerializeField] private bool _testMode = true;
+    private string _gameId = "4425063";
+    private string _rewardedVideo = "Rewarded_Android";
+    [SerializeField] private Button _adsButton;
     private void Awake()
     {
         instance = this;
@@ -15,9 +21,24 @@ public class _DonateShop : MonoBehaviour
     private void Start()
     {
         gUIUpdateScript = GetComponent<GUIUpdateScript>();
+        _adsButton.interactable = Advertisement.IsReady(_rewardedVideo);
 
+        Advertisement.Initialize(_gameId, _testMode);
     }
-  
+    public void On_BtnFreeMoney()
+    {
+        if (_adsButton)
+        {
+            Advertisement.Show(_rewardedVideo);
+            gUIUpdateScript.OrdinaryMoney += 50;
+        }
+        else
+        {
+            _adsButton.interactable = false;
+            Debug.Log("Advertisment not Ready!");
+        }
+    }
+
     public void On_BtnLot1()
     {
         gUIUpdateScript.OrdinaryMoney += 400;

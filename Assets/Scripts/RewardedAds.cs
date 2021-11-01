@@ -1,15 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UnityEngine.UI;
 
-public class RevardedFreeMoney : MonoBehaviour, IUnityAdsListener
+
+public class RewardedAds : MonoBehaviour, IUnityAdsListener
 {
     [SerializeField] private bool _testMode = true;
     [SerializeField] private Button _adsButton;
-    [SerializeField] private GUIUpdateScript gUIUpdateScript;
 
-    private string _gameId = "4425063";
-    private string _rewardedVideo = "Rewarded_Android";
+    public string _gameId = "4425063";
+    public string _rewardedVideo = "Rewarded_Android";
 
     private void Start()
     {
@@ -19,7 +21,7 @@ public class RevardedFreeMoney : MonoBehaviour, IUnityAdsListener
         if (_adsButton)
             _adsButton.onClick.AddListener(ShowRewardedVideo);
 
-        Advertisement.AddListener(this);
+        //Advertisement.AddListener(this);
         Advertisement.Initialize(_gameId, _testMode);
     }
     public void ShowRewardedVideo()
@@ -37,28 +39,16 @@ public class RevardedFreeMoney : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsDidError(string message)
     {
-        // ошибка рекламы
+        throw new System.NotImplementedException();
     }
 
     public void OnUnityAdsDidStart(string placementId)
     {
-        // только запустили рекламу
+        throw new System.NotImplementedException();
     }
 
-    public void OnUnityAdsDidFinish(string placementId, ShowResult showResult) // обработка рекламы(тут определяем вознаграждение)
+    public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
-        if (showResult == ShowResult.Finished)
-        {
-            gUIUpdateScript.OrdinaryMoney += 50;
-        }
-        else if (showResult == ShowResult.Skipped)
-        {
-            
-        }
-        else if (showResult == ShowResult.Failed)
-        {
-
-        }
+        throw new System.NotImplementedException();
     }
 }
-

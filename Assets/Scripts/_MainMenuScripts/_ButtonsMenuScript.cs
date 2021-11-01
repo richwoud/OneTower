@@ -6,8 +6,7 @@ public class _ButtonsMenuScript : MonoBehaviour
 {
     [SerializeField] private float _pesentShowAds;
     float tempPersent;
-    private string _video = "Interstitial_Android";
-
+ 
     public void OnBtn_Play()
     {
         SceneManager.LoadScene(1);
@@ -17,7 +16,7 @@ public class _ButtonsMenuScript : MonoBehaviour
         tempPersent = Random.Range(0, 1f);
         if (tempPersent < _pesentShowAds)
         {
-            AdsCore.ShowAdsVideo(_video);
+            AdsCore.ShowAdsVideo(AdsCore.S._video);
         }
 
         SceneManager.LoadScene(3);
@@ -27,7 +26,7 @@ public class _ButtonsMenuScript : MonoBehaviour
         tempPersent = Random.Range(0, 1f);
         if (tempPersent < _pesentShowAds)
         {
-            AdsCore.ShowAdsVideo(_video);
+            AdsCore.ShowAdsVideo(AdsCore.S._video);
         }
         SceneManager.LoadScene(5);
     }
@@ -36,7 +35,7 @@ public class _ButtonsMenuScript : MonoBehaviour
         tempPersent = Random.Range(0, 1f);
         if (tempPersent < _pesentShowAds)
         {
-            AdsCore.ShowAdsVideo(_video);
+            AdsCore.ShowAdsVideo(AdsCore.S._video);
         }
         SceneManager.LoadScene(4);
     }

@@ -1085,7 +1085,6 @@ GameObject:
   - component: {fileID: 1109711952}
   - component: {fileID: 1109711951}
   - component: {fileID: 1109711950}
-  - component: {fileID: 1109711953}
   - component: {fileID: 1109711949}
   m_Layer: 5
   m_Name: _ButtonWatchAD_MultiplyMoney
@@ -1173,7 +1172,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1109711951}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1847033182}
+        m_TargetAssemblyTypeName: _ScriptAfterDeath, Assembly-CSharp
+        m_MethodName: OnBtnWatchAD_AndMultiplyMoney
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1109711951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1212,21 +1223,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109711947}
   m_CullTransparentMesh: 1
---- !u!114 &1109711953
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109711947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57dfd09110fa16b4b80088679cf9b967, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scriptAfterDeath: {fileID: 1847033182}
-  _testMode: 1
-  _adsButton: {fileID: 1109711950}
 --- !u!1 &1318697136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,6 +1924,8 @@ MonoBehaviour:
   _ordinaryMoneyText: {fileID: 383147486}
   _scoreText: {fileID: 998038720}
   _highWaveText: {fileID: 483336236}
+  _adsButton: {fileID: 1109711950}
+  _testMode: 1
 --- !u!1 &1936253913
 GameObject:
   m_ObjectHideFlags: 0

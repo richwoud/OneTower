@@ -8,10 +8,10 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
     [SerializeField] private GameObject _buttonNoAds;
     [SerializeField] private bool _testMode = true;
 
-    private string _gameId = "4425063";
+    public string _gameId = "4425063";
 
-    private string _video = "Interstitial_Android";
-    private string _rewardedVideo = "Rewarded_Android";
+    public string _video = "Interstitial_Android";
+    
 
     private void Awake()
     {
@@ -49,7 +49,7 @@ public class AdsCore : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsReady(string placementId)
     {
-        if (placementId == _rewardedVideo)
+        if (placementId == _video)
         {
             // действие, если реклама доступна
         }

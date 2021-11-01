@@ -1801,7 +1801,6 @@ GameObject:
   - component: {fileID: 583640430}
   - component: {fileID: 583640429}
   - component: {fileID: 583640428}
-  - component: {fileID: 583640431}
   - component: {fileID: 583640427}
   m_Layer: 0
   m_Name: ButtonGetFree
@@ -1888,7 +1887,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 583640429}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1847033183}
+        m_TargetAssemblyTypeName: _DonateShop, Assembly-CSharp
+        m_MethodName: On_BtnFreeMoney
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &583640429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1927,21 +1938,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583640425}
   m_CullTransparentMesh: 1
---- !u!114 &583640431
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583640425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99df259f05091994a9fe735f9a9b1f19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _testMode: 1
-  _adsButton: {fileID: 583640428}
-  gUIUpdateScript: {fileID: 1847033184}
 --- !u!1 &610299401
 GameObject:
   m_ObjectHideFlags: 0
@@ -5355,6 +5351,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4080ce48d9e4a1c499d7f7034b642908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _testMode: 1
+  _adsButton: {fileID: 583640428}
 --- !u!114 &1847033184
 MonoBehaviour:
   m_ObjectHideFlags: 0
