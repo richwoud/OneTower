@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5446258414146732914}
   - component: {fileID: 1819748504750619134}
   m_Layer: 0
-  m_Name: StrongFastEnemyExplosion
+  m_Name: KillerExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

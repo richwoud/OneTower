@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6474908356481236196}
   - component: {fileID: 2714508693125404759}
   m_Layer: 5
-  m_Name: OutMoneyBoss1
+  m_Name: OutMoneyThreeFast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +30$
+  m_text: +4$
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a68b71ecaa928fd4fa3dd507d5faacbc, type: 2}
   m_sharedMaterial: {fileID: -5511459551053031122, guid: a68b71ecaa928fd4fa3dd507d5faacbc, type: 2}
