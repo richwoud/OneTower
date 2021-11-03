@@ -9,8 +9,9 @@ public class SettingsScript : MonoBehaviour
     public AudioMixerGroup Master;
     public GameObject _settingsPanel;
     public GameObject _toggleMusic, _sliderMaster;
- 
-   
+    
+
+
     private void Start()
     {
         _settingsPanel.GetComponentInChildren<Toggle>().isOn = PlayerPrefs.GetInt("MusicEnabled", 1) == 1;

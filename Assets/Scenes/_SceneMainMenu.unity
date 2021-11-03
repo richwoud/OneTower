@@ -398,7 +398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 18.02, y: -0.0000040531}
+  m_AnchoredPosition: {x: 18.02, y: -0.0000040530995}
   m_SizeDelta: {x: 629.46, y: 100.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &29453015
@@ -1425,7 +1425,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 80.23, y: -0.0000040531}
+  m_AnchoredPosition: {x: 80.23, y: -0.0000040530995}
   m_SizeDelta: {x: 753.88, y: 100.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &602633012
@@ -1990,7 +1990,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2545820937549958318, guid: 9bcffdc7f8d5b0540a9bc50bab3eb0e7, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 87d20ceff498e0b4da83205aa6b7461f, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bde226afe541d4148abbaced09b3b16b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2407,7 +2407,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 85.468, y: -0.0000040531}
+  m_AnchoredPosition: {x: 85.468, y: -0.0000040530995}
   m_SizeDelta: {x: 764.35, y: 100.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &793528445
@@ -3730,7 +3730,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 85.468, y: -0.0000040531}
+  m_AnchoredPosition: {x: 85.468, y: -0.0000040530995}
   m_SizeDelta: {x: 764.35, y: 100.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1380158694
@@ -5294,7 +5294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7efc1fb718fe6bc459920ebbbf855dd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pesentShowAds: 0.31
+  _pesentShowAds: 0.28
 --- !u!114 &1847033184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5813,6 +5813,8 @@ MonoBehaviour:
   _settingsPanel: {fileID: 2742512225557266541}
   _toggleMusic: {fileID: 2742512226225106216}
   _sliderMaster: {fileID: 2742512225984019962}
+  Normal: {fileID: 24500006, guid: 9bcffdc7f8d5b0540a9bc50bab3eb0e7, type: 2}
+  InPause: {fileID: 24500006, guid: 9bcffdc7f8d5b0540a9bc50bab3eb0e7, type: 2}
 --- !u!114 &2033793100
 MonoBehaviour:
   m_ObjectHideFlags: 0

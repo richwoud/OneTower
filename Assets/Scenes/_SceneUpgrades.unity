@@ -1478,7 +1478,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.0000038146973, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -0.0000076294, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &545687233
 MonoBehaviour:
@@ -1502,7 +1502,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Buy
 
-    $300
+    $100
 
 '
   m_isRightToLeft: 0
@@ -2161,8 +2161,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.51383334}
-  m_AnchoredPosition: {x: -0.000024319, y: -0.69164085}
-  m_SizeDelta: {x: 470.6, y: 98.62}
+  m_AnchoredPosition: {x: -10.11, y: -14.17}
+  m_SizeDelta: {x: 450.38, y: 125.58}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &735049539
 MonoBehaviour:
@@ -2184,7 +2184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Increases the tower shield by 1
+  m_text: The tower will withstand 1 additional damage
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a68b71ecaa928fd4fa3dd507d5faacbc, type: 2}
   m_sharedMaterial: {fileID: -5511459551053031122, guid: a68b71ecaa928fd4fa3dd507d5faacbc, type: 2}
@@ -2228,7 +2228,7 @@ MonoBehaviour:
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
+  m_wordWrappingRatios: 0.451
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
@@ -3484,7 +3484,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2545820937549958318, guid: 9bcffdc7f8d5b0540a9bc50bab3eb0e7, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 960b7cb3b4710ab499744fd8c3b8915b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 87d20ceff498e0b4da83205aa6b7461f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4614,7 +4614,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _notEnoughMoney: {fileID: 1516610783}
-  shopCosts: f40100002c01000020030000c80000004c040000
+  shopCosts: f40100006400000020030000c80000004c040000
   shopBtnText:
   - {fileID: 1524241367}
   - {fileID: 545687233}

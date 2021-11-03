@@ -97,9 +97,12 @@ public class TowerSettings : MonoBehaviour
         {
             _shieldBar.SetActive(false);
             isActiveShield = false;
+            GlobalSettings.IsShieldActive = false;
+            PlayerPrefs.SetInt("IsShieldActive", GlobalSettings.IsShieldActive ? 1 : 0);
+
         }
-           
-        
+
+
 
     }
 }

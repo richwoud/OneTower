@@ -1460,7 +1460,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 2545820937549958318, guid: 9bcffdc7f8d5b0540a9bc50bab3eb0e7, type: 2}
-  m_audioClip: {fileID: 8300000, guid: bde226afe541d4148abbaced09b3b16b, type: 3}
+  m_audioClip: {fileID: 8300000, guid: fda6e07fe6b439545a07fd0864403133, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -3387,7 +3387,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162475139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 915705397}
@@ -3766,7 +3766,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1387675427}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1525893971}
@@ -3833,6 +3833,8 @@ MonoBehaviour:
   _pauseMenuUI: {fileID: 1387675427}
   _player: {fileID: 498844489}
   _pauseButton: {fileID: 630474346}
+  Normal: {fileID: 24500006, guid: 9bcffdc7f8d5b0540a9bc50bab3eb0e7, type: 2}
+  InPause: {fileID: 4043816784055868110, guid: 9bcffdc7f8d5b0540a9bc50bab3eb0e7, type: 2}
 --- !u!114 &1387675432
 MonoBehaviour:
   m_ObjectHideFlags: 0

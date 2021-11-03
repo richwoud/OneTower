@@ -8,7 +8,7 @@ public class Shop : MonoBehaviour
     public GameObject _notEnoughMoney;
     private int _towerHealthPlus;
     private int _plusUpgrade = 1;
-    private int _towerShieldPlus;
+    private int _towerShield = 1;
     private int _damageBulletPlus;
     private float _reloadDelayMinus;
     private float _speedBulletPlus;
@@ -28,7 +28,7 @@ public class Shop : MonoBehaviour
         _notEnoughMoney.SetActive(false);
         gUIUpdateScript = GetComponent<GUIUpdateScript>();
         _towerHealthPlus = PlayerPrefs.GetInt("TowerHealth");
-        _towerShieldPlus = PlayerPrefs.GetInt("TowerShield");
+       
         _reloadDelayMinus = PlayerPrefs.GetFloat("ReloadDelay");
         _speedBulletPlus = PlayerPrefs.GetFloat("SpeedBullet");
         _damageBulletPlus = PlayerPrefs.GetInt("DamageBullet");
@@ -68,10 +68,9 @@ public class Shop : MonoBehaviour
         if (gUIUpdateScript.OrdinaryMoney >= shopCosts[index])
         {
             gUIUpdateScript.OrdinaryMoney -= shopCosts[index];
-            _towerShieldPlus += _plusUpgrade;
             GlobalSettings.IsShieldActive = true;
             PlayerPrefs.SetInt("IsShieldActive", GlobalSettings.IsShieldActive ? 1 : 0);
-            PlayerPrefs.SetInt("TowerShield", _towerShieldPlus);
+            PlayerPrefs.SetInt("TowerShield", _towerShield);
             shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
         }
         else

@@ -25,10 +25,11 @@ AudioMixerController:
   m_MasterGroup: {fileID: 24300002}
   m_Snapshots:
   - {fileID: 24500006}
+  - {fileID: 4043816784055868110}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ExposedParameters:
   - guid: c95622ca5e03b684fa5e63e6f6851280
     name: MusicVolume
@@ -59,6 +60,8 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
+  - {fileID: 4734840119164475555}
+  - {fileID: 6740495575410522526}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -83,11 +86,11 @@ AudioMixerSnapshotController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Snapshot
+  m_Name: Normal
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: dfe45b3fc3174fb4a9eccd4cad854aa1
   m_FloatValues:
-    a7db6f5610f1e1a4ca878b2f63e0a053: 0
+    a7db6f5610f1e1a4ca878b2f63e0a053: 20
     c5edc5a9c9a84474eb5c9e11e6b2079d: 0
     c95622ca5e03b684fa5e63e6f6851280: 0
   m_TransitionOverrides: {}
@@ -143,3 +146,60 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!245 &4043816784055868110
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: InPause
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: c14dff94b5530d144a71263d68b61859
+  m_FloatValues:
+    52b6ef404fc9c4b4ebdec321319031d5: -16
+    a9d4df85587e39e4c82a9e50c80304d5: 0
+    a7db6f5610f1e1a4ca878b2f63e0a053: 20
+    c5edc5a9c9a84474eb5c9e11e6b2079d: -2
+    c95622ca5e03b684fa5e63e6f6851280: 0
+    e278a6cabf59f18499dc83a2bd72f054: 700
+    a611f39dab56c774f862224188bcac61: 50
+    027cb95e9b88b6e4e9c1ae86a4da52f9: 50
+  m_TransitionOverrides: {}
+--- !u!244 &4734840119164475555
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 48f9303b287058042bc46c2b5465b8fa
+  m_EffectName: Lowpass Simple
+  m_MixLevel: 6c3f7a8b86c743a4aaedccfe35432f5f
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: e278a6cabf59f18499dc83a2bd72f054
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &6740495575410522526
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: d59052e129b0c2f4d848c20a5b518e34
+  m_EffectName: Compressor
+  m_MixLevel: fe98159bd91c1a346870d66a54f8acca
+  m_Parameters:
+  - m_ParameterName: Threshold
+    m_GUID: 52b6ef404fc9c4b4ebdec321319031d5
+  - m_ParameterName: Attack
+    m_GUID: 027cb95e9b88b6e4e9c1ae86a4da52f9
+  - m_ParameterName: Release
+    m_GUID: a611f39dab56c774f862224188bcac61
+  - m_ParameterName: Make up gain
+    m_GUID: a9d4df85587e39e4c82a9e50c80304d5
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
