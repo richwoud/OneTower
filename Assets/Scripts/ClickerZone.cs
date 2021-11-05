@@ -45,6 +45,7 @@ public class ClickerZone : MonoBehaviour, IPointerClickHandler
             }
         }
     }
+#if UNITY_EDITOR
     /// <summary>
     /// Метод отвечающий за стрельбу мышью
     /// </summary>
@@ -59,7 +60,9 @@ public class ClickerZone : MonoBehaviour, IPointerClickHandler
             shootSound.Play();
         }
     }
+#endif
 
+#if UNITY_ANDROID && !UNITY_EDITOR
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Enemy"))
@@ -67,7 +70,7 @@ public class ClickerZone : MonoBehaviour, IPointerClickHandler
             Fire();
         }
     }
-
+#endif
 }
 
 
