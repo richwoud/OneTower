@@ -36,8 +36,26 @@ public class Translator : MonoBehaviour
             "Record wave", //19
             "You have earned", //20
             "Apply", //21
-            ""
-            
+            "Tower characteristics", //22
+            "Maximum Tower Health", //23
+            "Reload time", //24
+            "Bullet speed", //25
+            "Bullet Damage", //26
+            "Watch AD and get $50", //27
+            "Remove ads", //28
+            "You get $400", //29
+            "You get $2400\nFree $400", //30
+            "You get $4200\nFree $600", //31
+            "You get $10000\nFree $2000", //32
+            "You get $25000\nFree $9000", //33
+            "Get Free", //34
+            "Buy", //35
+            "Increases tower health by 1", //36
+            "The tower will withstand 1 additional damage", //37
+            "Reduces reload time", //38
+            "Increases bullet speed by 2", //39
+            "Increases bullet damage by 1" //40
+
         },
         #endregion
          #region RUSSIAN
@@ -64,7 +82,25 @@ public class Translator : MonoBehaviour
               "Рекордная волна",
               "Вы заработали",
               "Применить",
-              ""
+              "Характеристики башни",
+              "Максимальное здоровье башни",
+              "Время перезарядки",
+              "Скорость пули",
+              "Урон пули",
+              "Посмотрите рекламу и получите $50",
+              "Убрать рекламу",
+              "Вы получаете $400",
+              "Вы получаете $2400\nБесплатно $400",
+              "Вы получаете $4200\nБесплатно $600",
+              "Вы получаете $10000\nБесплатно $2000",
+              "Вы получаете $25000\nБесплатно $9000",
+              "Получить бесплатно",
+              "Купить",
+              "Увеличивает здоровье башни на 1",
+              "Башня выдержит 1 дополнительный урон",
+              "Сокращает время перезарядки",
+              "Увеличивает скорость пули на 2",
+              "Увеличивает урон от пули на 1"
           },
         #endregion
     };

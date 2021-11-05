@@ -11,16 +11,14 @@ public class Stats : MonoBehaviour
     private void Start()
     {
         _towerHealth = PlayerPrefs.GetInt("TowerHealth");
-       
         _reloadDelay = PlayerPrefs.GetFloat("ReloadDelay");
         _speedBullet = PlayerPrefs.GetFloat("SpeedBullet");
         _damageBullet = PlayerPrefs.GetInt("DamageBullet");
 
-        _textHealth.text = $"Tower health: {_towerHealth}";
-       
-        _textReload.text = $"Reload time: {_reloadDelay}";
-        _textSpeedBullet.text = $"Speed bullet: {_speedBullet}";
-        _textDamageBullet.text = $"Damage bullet: {_damageBullet}";
+        _textHealth.text = _towerHealth.ToString();
+        _textReload.text = _reloadDelay.ToString();
+        _textSpeedBullet.text =_speedBullet.ToString();
+        _textDamageBullet.text = _damageBullet.ToString();
     }
 
     public void Btn_Exit()
