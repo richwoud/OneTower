@@ -16,7 +16,7 @@ public class Translator : MonoBehaviour
         {
             "Highscore", // 0
             "Battle", //1
-            "Upgrade", //2
+            "Upgrades", //2
             "Shop", //3
             "Exit", //4
             "Settings", //5
@@ -54,7 +54,8 @@ public class Translator : MonoBehaviour
             "The tower will withstand 1 additional damage", //37
             "Reduces reload time", //38
             "Increases bullet speed by 2", //39
-            "Increases bullet damage by 1" //40
+            "Increases bullet damage by 1", //40
+            "Not enough money" //41
 
         },
         #endregion
@@ -100,7 +101,8 @@ public class Translator : MonoBehaviour
               "Башня выдержит 1 дополнительный урон",
               "Сокращает время перезарядки",
               "Увеличивает скорость пули на 2",
-              "Увеличивает урон от пули на 1"
+              "Увеличивает урон от пули на 1",
+              "Не хватает денег"
           },
         #endregion
     };

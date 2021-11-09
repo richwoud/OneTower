@@ -65,26 +65,47 @@ public class EnemyProperty : MonoBehaviour
                 AddMoney = 3;
                 AddScore = 300;
                 break;
-            case DifficultyEnemyType.ordinaryThreeLevel:
+            case DifficultyEnemyType.ordinaryTwoLevel:
                 Speed = 2.6f;
                 _maxHealthEnemy = 3;
                 EnemyDamage = 3;
                 AddMoney = 3;
                 AddScore = 300;
                 break;
-            case DifficultyEnemyType.fastThreeLevel:
+            case DifficultyEnemyType.fastTwoLevel:
                 Speed = 3f;
                 _maxHealthEnemy = 4;
                 EnemyDamage = 4;
                 AddMoney = 4;
                 AddScore = 400;
                 break;
-            case DifficultyEnemyType.strongThreeLevel:
+            case DifficultyEnemyType.strongTwoLevel:
                 Speed = 2.7f;
                 _maxHealthEnemy = 5;
                 EnemyDamage = 5;
                 AddMoney = 5;
                 AddScore = 500;
+                break;
+            case DifficultyEnemyType.ordinaryThreeLevel:
+                Speed = 2.8f;
+                _maxHealthEnemy = 4;
+                EnemyDamage = 4;
+                AddMoney = 4;
+                AddScore = 400;
+                break;
+            case DifficultyEnemyType.fastThreeLevel:
+                Speed = 3.2f;
+                _maxHealthEnemy = 5;
+                EnemyDamage = 5;
+                AddMoney = 5;
+                AddScore = 500;
+                break;
+            case DifficultyEnemyType.strongThreeLevel:
+                Speed = 2.9f;
+                _maxHealthEnemy = 6;
+                EnemyDamage = 6;
+                AddMoney = 6;
+                AddScore = 600;
                 break;
             case DifficultyEnemyType.killer:
                 Speed = 4f;

@@ -17,9 +17,10 @@ public class Shop : MonoBehaviour
     public TextMeshProUGUI[] shopBtnText;
     [SerializeField] private GameObject _reloadBtn;
     [SerializeField] private GameObject _speedBtn;
+    [SerializeField] private GameObject _shieldBtn;
     [SerializeField] private int maxUpgradeReload;
     [SerializeField] private int maxUpgradeSpeed;
-
+   [SerializeField] private bool shield;
 
 
 
@@ -45,6 +46,17 @@ public class Shop : MonoBehaviour
             _speedBtn.GetComponent<Button>().interactable = false;
 
         }
+        shield = PlayerPrefs.GetInt("shield") == 1 ? true : false;
+
+        if (shield)
+        {
+            _shieldBtn.GetComponent<Button>().interactable = false;
+        }
+        else
+        {
+            _shieldBtn.GetComponent<Button>().interactable = true;
+        }
+       
     }
 
 
@@ -55,7 +67,7 @@ public class Shop : MonoBehaviour
             gUIUpdateScript.OrdinaryMoney -= shopCosts[index];
             _towerHealthPlus += _plusUpgrade;
             PlayerPrefs.SetInt("TowerHealth", _towerHealthPlus);
-            shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
+            shopBtnText[index].text = "$" +shopCosts[index].ToString();
            
         }
         else
@@ -67,11 +79,16 @@ public class Shop : MonoBehaviour
     {
         if (gUIUpdateScript.OrdinaryMoney >= shopCosts[index])
         {
+
             gUIUpdateScript.OrdinaryMoney -= shopCosts[index];
             GlobalSettings.IsShieldActive = true;
             PlayerPrefs.SetInt("IsShieldActive", GlobalSettings.IsShieldActive ? 1 : 0);
             PlayerPrefs.SetInt("TowerShield", _towerShield);
-            shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
+            shield = true;
+            PlayerPrefs.SetInt("shield", shield ? 1: 0);
+            shopBtnText[index].text = "$" + shopCosts[index].ToString();
+            _shieldBtn.GetComponent<Button>().interactable = false;
+
         }
         else
         {
@@ -89,7 +106,7 @@ public class Shop : MonoBehaviour
                 gUIUpdateScript.OrdinaryMoney -= shopCosts[index];
                 _reloadDelayMinus -= 0.1f;
                 PlayerPrefs.SetFloat("ReloadDelay", _reloadDelayMinus);
-                shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
+                shopBtnText[index].text = "$" +shopCosts[index].ToString();
             }
             else
             {
@@ -115,7 +132,7 @@ public class Shop : MonoBehaviour
                 _speedBulletPlus += 2.0f;
                 PlayerPrefs.SetInt("MaxUpgradeSpeed", maxUpgradeSpeed);
                 PlayerPrefs.SetFloat("SpeedBullet", _speedBulletPlus);
-                shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
+                shopBtnText[index].text = "$" + shopCosts[index].ToString();
             }
             else
             {
@@ -134,7 +151,7 @@ public class Shop : MonoBehaviour
             gUIUpdateScript.OrdinaryMoney -= shopCosts[index];
             _damageBulletPlus += _plusUpgrade;
             PlayerPrefs.SetInt("DamageBullet", _damageBulletPlus);
-            shopBtnText[index].text = "Buy\n" + "$" + shopCosts[index].ToString();
+            shopBtnText[index].text = "$" + shopCosts[index].ToString();
         }
         else
         {

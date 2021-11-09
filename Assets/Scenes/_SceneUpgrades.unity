@@ -981,6 +981,7 @@ GameObject:
   - component: {fileID: 379732720}
   - component: {fileID: 379732722}
   - component: {fileID: 379732721}
+  - component: {fileID: 379732723}
   m_Layer: 5
   m_Name: NotEMtext
   m_TagString: Untagged
@@ -1029,8 +1030,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Not enough money
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: a68b71ecaa928fd4fa3dd507d5faacbc, type: 2}
-  m_sharedMaterial: {fileID: -5511459551053031122, guid: a68b71ecaa928fd4fa3dd507d5faacbc, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f57928d020b01514c9be2af48b8c6d38, type: 2}
+  m_sharedMaterial: {fileID: 602851982999858255, guid: f57928d020b01514c9be2af48b8c6d38, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1064,7 +1065,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1104,6 +1105,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379732719}
   m_CullTransparentMesh: 1
+--- !u!114 &379732723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379732719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c1f68ce3e68ec74583fa2bebc8810b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textID: 41
+  UIText: {fileID: 0}
 --- !u!1 &416781827
 GameObject:
   m_ObjectHideFlags: 0
@@ -4264,7 +4279,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000038146973, y: -8.9525}
+  m_AnchoredPosition: {x: -0.0000038146973, y: -8.952499}
   m_SizeDelta: {x: 0, y: -17.905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1552255661
@@ -4801,7 +4816,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000038146973, y: -9.622508}
+  m_AnchoredPosition: {x: -0.0000038146973, y: -9.622509}
   m_SizeDelta: {x: 0, y: -19.245}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1737591058
@@ -5462,13 +5477,14 @@ MonoBehaviour:
   _notEnoughMoney: {fileID: 1516610783}
   shopCosts: f40100006400000020030000c80000004c040000
   shopBtnText:
-  - {fileID: 1524241367}
-  - {fileID: 545687233}
-  - {fileID: 1280838810}
-  - {fileID: 258985261}
-  - {fileID: 1624501450}
+  - {fileID: 1737591058}
+  - {fileID: 1825120214}
+  - {fileID: 1710454967}
+  - {fileID: 1552255661}
+  - {fileID: 1823625308}
   _reloadBtn: {fileID: 1509889188}
   _speedBtn: {fileID: 206427248}
+  _shieldBtn: {fileID: 1517931005}
   maxUpgradeReload: 0
   maxUpgradeSpeed: 0
 --- !u!114 &1847033184

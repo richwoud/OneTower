@@ -30,7 +30,7 @@ public class TowerSettings : MonoBehaviour
     private void Awake()
     {
         isActiveShield = PlayerPrefs.GetInt("IsShieldActive") == 1 ? true : false;
-        
+
     }
     private void Start()
     {
@@ -44,7 +44,8 @@ public class TowerSettings : MonoBehaviour
 
         _maxHealthTower = PlayerPrefs.GetInt("TowerHealth");
         _currentHealthTower = _maxHealthTower;
-       
+
+      
     }
 
     void CheckHealth()
@@ -105,6 +106,13 @@ public class TowerSettings : MonoBehaviour
 
 
     }
+
+
+
+  
+
+
+
 }
 
 
