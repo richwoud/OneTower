@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 068c88d2a80e83f42947da46d2acdfd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentEnemyType: 6
+  currentEnemyType: 30
 --- !u!114 &-2751206540325324700
 MonoBehaviour:
   m_ObjectHideFlags: 0
