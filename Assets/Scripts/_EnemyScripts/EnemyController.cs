@@ -21,15 +21,15 @@ public class EnemyController : MonoBehaviour
         _enemyProperty.DifficultyEnemy(currentEnemyType);
         _lookDirection = (_playerPosition.transform.position - transform.position).normalized;
     }
-    //private void OnDestroy() 
-    //{
-    //    int enemiesLeft = 0;
-    //    enemiesLeft = GameObject.FindGameObjectsWithTag("Enemy").Length;
-    //    if (enemiesLeft == 0)
-    //    {
-    //        _spawnManager.LaunchWave();
-    //    }
-    //}
+    private void OnDestroy()
+    {
+        int enemiesLeft = 0;
+        enemiesLeft = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        if (enemiesLeft == 0)
+        {
+            _spawnManager.LaunchWave();
+        }
+    }
 
 
     private void FixedUpdate()

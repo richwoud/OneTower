@@ -4,45 +4,56 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private Waves[] _waves;
-    private int _currentEnemyIndex; // индекс текущего врага
+    //private int _currentEnemyIndex; // индекс текущего врага
     [SerializeField] private int _currentWaveIndex; // номер волны
-    public int CurrentWaveIndex { get => _currentWaveIndex; }
+    public int CurrentWaveIndex { get => _currentWaveIndex; set => _currentWaveIndex = value; }
 
-   [SerializeField] private int _enemiesLeftToSpawn; // число врагов, которых нужно заспавнить в этой волне
+    int randEnemy;
+    int randPos;
+    float spawnBtw;
+
+    [SerializeField] private int _enemiesLeftToSpawn; // число врагов, которых нужно заспавнить в этой волне
 
     private void Start()
     {
-        PlayerPrefs.SetInt("CurrentWaveIndex", CurrentWaveIndex);
+        PlayerPrefs.SetInt("CurrentWaveIndex", CurrentWaveIndex );
 
-        _enemiesLeftToSpawn = _waves[0].WaveSettings.Length;
+        _enemiesLeftToSpawn = _waves[0].WaveSettings.Enemy.Length;
         LaunchWave();
     }
     private void Update()
     {
-        PlayerPrefs.SetInt("CurrentWaveIndex", CurrentWaveIndex);
+        PlayerPrefs.SetInt("CurrentWaveIndex", CurrentWaveIndex );
 
     }
     private IEnumerator SpawnEnemyInWave()
     {
+
         if (_enemiesLeftToSpawn > 0)
         {
-            yield return new WaitForSeconds(_waves[_currentWaveIndex].WaveSettings[_currentEnemyIndex].SpawnDelay);
+            spawnBtw = Random.Range(0, 3.5f);
+            _waves[_currentWaveIndex].WaveSettings.SpawnDelay = spawnBtw;
 
-            Instantiate(_waves[_currentWaveIndex].WaveSettings[_currentEnemyIndex].Enemy,
-                _waves[_currentWaveIndex].WaveSettings[_currentEnemyIndex]
-                .NeededSpawner.transform.position, Quaternion.identity);
+            yield return new WaitForSeconds(_waves[_currentWaveIndex].WaveSettings.SpawnDelay);
+
+            randEnemy = Random.Range(0, _waves[_currentWaveIndex].WaveSettings.Enemy.Length);
+            randPos = Random.Range(0, _waves[_currentWaveIndex].WaveSettings
+                .NeededSpawner.Length);
+
+            Instantiate(_waves[_currentWaveIndex].WaveSettings.Enemy[randEnemy],
+                _waves[_currentWaveIndex].WaveSettings.NeededSpawner[randPos].transform.position, Quaternion.identity);
 
             _enemiesLeftToSpawn--;
-            _currentEnemyIndex++;
+            //_currentEnemyIndex++;
             StartCoroutine(SpawnEnemyInWave());
         }
         else
         {
-            if (_currentWaveIndex < _waves.Length - 1 )
+            if (_currentWaveIndex < _waves.Length - 1)
             {
                 _currentWaveIndex++;
-                _enemiesLeftToSpawn = _waves[_currentWaveIndex].WaveSettings.Length;
-                _currentEnemyIndex = 0;
+                _enemiesLeftToSpawn = _waves[_currentWaveIndex].WaveSettings.Enemy.Length;
+                //_currentEnemyIndex = 0;
             }
         }
     }
@@ -51,23 +62,23 @@ public class SpawnManager : MonoBehaviour
         StartCoroutine(SpawnEnemyInWave());
 
     }
-  
+
 }
 [System.Serializable]
 
 public class Waves
 {
-    [SerializeField] private WaveSettings[] _waveSettings;
-    public WaveSettings[] WaveSettings { get => _waveSettings; }
+    [SerializeField] private WaveSettings _waveSettings;
+    public WaveSettings WaveSettings { get => _waveSettings; }
 }
 
 [System.Serializable]
 public class WaveSettings
 {
-    [SerializeField] private GameObject _enemy;
-    public GameObject Enemy { get =>  _enemy; }
-    [SerializeField] private GameObject _neededSpawner;
-    public GameObject NeededSpawner { get => _neededSpawner; }
-    [SerializeField] private float _spawnDelay;
-    public float SpawnDelay { get => _spawnDelay; }
+    [SerializeField] private GameObject[] _enemy;
+    public GameObject[] Enemy { get => _enemy; }
+    [SerializeField] private GameObject[] _neededSpawner;
+    public GameObject[] NeededSpawner { get => _neededSpawner; }
+    private float _spawnDelay;
+    public float SpawnDelay { get => _spawnDelay; set => _spawnDelay = value; }
 }

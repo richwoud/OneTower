@@ -53,6 +53,7 @@ public class ClickerZone : MonoBehaviour, IPointerClickHandler
     {
         if (_shootStatus)
         {
+            Target.S.OnDistance();
             Debug.Log("CLICK mouse!!");
             StartCoroutine(Reload());
             Instantiate(_bulletPrafab, _player.transform.position, Quaternion.identity);
@@ -66,6 +67,7 @@ public class ClickerZone : MonoBehaviour, IPointerClickHandler
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
+            Target.S.OnDistance();
             Fire();
         }
     }

@@ -9,6 +9,7 @@ public class Target : MonoBehaviour
     public Vector2 bottom_left_corner;
     public GameObject currentTarget;
     LayerMask layerMask;
+
     private void Start()
     {
          layerMask = LayerMask.GetMask("Enemy");
@@ -21,9 +22,14 @@ public class Target : MonoBehaviour
     private void FixedUpdate()
     {
       
-       var _collider = Physics2D.OverlapAreaAll(top_right_corner, bottom_left_corner, layerMask);
-        float dist = Mathf.Infinity;
        
+    }
+    public void OnDistance()
+    {
+        var _collider = Physics2D.OverlapAreaAll(top_right_corner, bottom_left_corner, layerMask);
+
+        float dist = Mathf.Infinity;
+
         Collider2D currentCollider = _collider[0];
         if (currentCollider == null)
         {
@@ -43,7 +49,6 @@ public class Target : MonoBehaviour
             currentTarget = currentCollider.gameObject;
         }
     }
-
 
 
     private void OnDrawGizmos()
