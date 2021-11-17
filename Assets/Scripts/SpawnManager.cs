@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class SpawnManager : MonoBehaviour
     //private int _currentEnemyIndex; // индекс текущего врага
     [SerializeField] private int _currentWaveIndex; // номер волны
     public int CurrentWaveIndex { get => _currentWaveIndex; set => _currentWaveIndex = value; }
+
 
     int randEnemy;
     int randPos;
@@ -24,7 +26,7 @@ public class SpawnManager : MonoBehaviour
     private void Update()
     {
         PlayerPrefs.SetInt("CurrentWaveIndex", CurrentWaveIndex );
-
+       
     }
     private IEnumerator SpawnEnemyInWave()
     {
@@ -51,12 +53,26 @@ public class SpawnManager : MonoBehaviour
         {
             if (_currentWaveIndex < _waves.Length - 1)
             {
+               
                 _currentWaveIndex++;
                 _enemiesLeftToSpawn = _waves[_currentWaveIndex].WaveSettings.Enemy.Length;
+               
                 //_currentEnemyIndex = 0;
+            }
+            else
+            {
+                if (_currentWaveIndex == 100 && _enemiesLeftToSpawn == 0)
+                {
+                    VictoryGame();
+                }
             }
         }
     }
+    public void VictoryGame()
+    {
+        SceneManager.LoadScene(6);
+    }
+
     public void LaunchWave()
     {
         StartCoroutine(SpawnEnemyInWave());

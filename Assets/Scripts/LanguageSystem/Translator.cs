@@ -55,7 +55,12 @@ public class Translator : MonoBehaviour
             "Reduces reload time", //38
             "Increases bullet speed by 2", //39
             "Increases bullet damage by 1", //40
-            "Not enough money" //41
+            "Not enough money", //41
+            "Congratulations! You have defeated all the enemies and saved this world from the invasion of cubes. Your tower is ready to destroy anyone who challenges! " +
+            "Thank you for playing this game all this time. I hope you enjoyed it and had fun. Please rate the game on Google Play, " +
+            "and you can also suggest improvements for the game." +
+            "See you in the next updates and games!", //42
+            "Speed Game" //43
 
         },
         #endregion
@@ -102,7 +107,11 @@ public class Translator : MonoBehaviour
               "Сокращает время перезарядки",
               "Увеличивает скорость пули на 2",
               "Увеличивает урон от пули на 1",
-              "Не хватает денег"
+              "Не хватает денег",
+               "Поздравляю! Вы победили всех врагов и спасли этот мир от нашествия кубиков. Ваша башня готова уничтожить любого, кто бросит вызов!" +
+            "Благодарю вас за то что играли в эту игру всё это время. Надеюсь Вам понравилось и было весело. Оцените пожалуйста игру в Google Play," +
+            " а также можете предложить улучшения для игры. Увидимся в следующих обновлениях и играх!",
+               "Скорость игры"
           },
         #endregion
     };

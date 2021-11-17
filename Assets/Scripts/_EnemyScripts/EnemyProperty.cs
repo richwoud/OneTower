@@ -88,169 +88,169 @@ public class EnemyProperty : MonoBehaviour
                 break;
             case DifficultyEnemyType.ordinaryThreeLevel:
                 Speed = 2.8f;
-                _maxHealthEnemy = 4;
-                EnemyDamage = 4;
+                _maxHealthEnemy = 5;
+                EnemyDamage = 5;
                 AddMoney = 4;
                 AddScore = 400;
                 break;
             case DifficultyEnemyType.fastThreeLevel:
                 Speed = 3.2f;
-                _maxHealthEnemy = 5;
-                EnemyDamage = 5;
+                _maxHealthEnemy = 6;
+                EnemyDamage = 6;
                 AddMoney = 5;
                 AddScore = 500;
                 break;
             case DifficultyEnemyType.strongThreeLevel:
                 Speed = 2.9f;
-                _maxHealthEnemy = 6;
-                EnemyDamage = 6;
+                _maxHealthEnemy = 7;
+                EnemyDamage = 7;
                 AddMoney = 6;
                 AddScore = 600;
                 break;
             case DifficultyEnemyType.ordinaryFourLevel:
                 Speed = 2.8f;
-                _maxHealthEnemy = 5;
-                EnemyDamage = 5;
+                _maxHealthEnemy = 7;
+                EnemyDamage = 7;
                 AddMoney = 5;
                 AddScore = 500;
                 break;
             case DifficultyEnemyType.fastFourLevel:
                 Speed = 3.3f;
-                _maxHealthEnemy = 6;
-                EnemyDamage = 6;
+                _maxHealthEnemy = 8;
+                EnemyDamage = 8;
                 AddMoney = 6;
                 AddScore = 600;
                 break;
             case DifficultyEnemyType.strongFourLevel:
                 Speed = 2.9f;
-                _maxHealthEnemy = 7;
-                EnemyDamage = 7;
+                _maxHealthEnemy = 9;
+                EnemyDamage = 9;
                 AddMoney = 7;
                 AddScore = 700;
                 break;
             case DifficultyEnemyType.ordinaryFiveLevel:
                 Speed = 2.9f;
-                _maxHealthEnemy = 6;
-                EnemyDamage = 6;
+                _maxHealthEnemy = 9;
+                EnemyDamage = 9;
                 AddMoney = 6;
                 AddScore = 600;
                 break;
             case DifficultyEnemyType.fastFiveLevel:
                 Speed = 3.5f;
-                _maxHealthEnemy = 7;
-                EnemyDamage = 7;
+                _maxHealthEnemy = 10;
+                EnemyDamage = 10;
                 AddMoney = 7;
                 AddScore = 700;
                 break;
             case DifficultyEnemyType.strongFiveLevel:
                 Speed = 2.9f;
-                _maxHealthEnemy = 8;
-                EnemyDamage = 8;
+                _maxHealthEnemy = 11;
+                EnemyDamage = 11;
                 AddMoney = 8;
                 AddScore = 800;
                 break;
             case DifficultyEnemyType.ordinarySixLevel:
                 Speed = 2.9f;
-                _maxHealthEnemy = 7;
-                EnemyDamage = 7;
+                _maxHealthEnemy = 11;
+                EnemyDamage = 11;
                 AddMoney = 7;
                 AddScore = 700;
                 break;
             case DifficultyEnemyType.fastSixLevel:
                 Speed = 3.5f;
-                _maxHealthEnemy = 8;
-                EnemyDamage = 8;
+                _maxHealthEnemy = 12;
+                EnemyDamage = 12;
                 AddMoney = 8;
                 AddScore = 800;
                 break;
             case DifficultyEnemyType.strongSixLevel:
                 Speed = 2.9f;
-                _maxHealthEnemy = 9;
-                EnemyDamage = 9;
+                _maxHealthEnemy = 13;
+                EnemyDamage = 13;
                 AddMoney = 9;
                 AddScore = 900;
                 break;
             case DifficultyEnemyType.ordinarySevenLevel:
                 Speed = 2.9f;
-                _maxHealthEnemy = 8;
-                EnemyDamage = 8;
+                _maxHealthEnemy = 13;
+                EnemyDamage = 13;
                 AddMoney = 8;
                 AddScore = 800;
                 break;
             case DifficultyEnemyType.fastSevenLevel:
                 Speed = 3.5f;
-                _maxHealthEnemy = 9;
-                EnemyDamage = 9;
+                _maxHealthEnemy = 14;
+                EnemyDamage = 14;
                 AddMoney = 9;
                 AddScore = 900;
                 break;
             case DifficultyEnemyType.strongSevenLevel:
                 Speed = 2.9f;
-                _maxHealthEnemy = 10;
-                EnemyDamage = 10;
+                _maxHealthEnemy = 15;
+                EnemyDamage = 15;
                 AddMoney = 10;
                 AddScore = 1000;
                 break;
             case DifficultyEnemyType.ordinaryEightLevel:
                 Speed = 2.9f;
-                _maxHealthEnemy = 9;
-                EnemyDamage = 9;
+                _maxHealthEnemy = 15;
+                EnemyDamage = 15;
                 AddMoney = 9;
                 AddScore = 900;
                 break;
             case DifficultyEnemyType.fastEightLevel:
                 Speed = 3.6f;
-                _maxHealthEnemy = 10;
-                EnemyDamage = 10;
+                _maxHealthEnemy = 16;
+                EnemyDamage = 16;
                 AddMoney = 10;
                 AddScore = 1000;
                 break;
             case DifficultyEnemyType.strongEightLevel:
                 Speed = 2.9f;
-                _maxHealthEnemy = 11;
-                EnemyDamage = 11;
+                _maxHealthEnemy = 17;
+                EnemyDamage = 17;
                 AddMoney = 11;
                 AddScore = 1100;
                 break;
             case DifficultyEnemyType.ordinaryNineLevel:
                 Speed = 2.9f;
-                _maxHealthEnemy = 10;
-                EnemyDamage = 10;
+                _maxHealthEnemy = 17;
+                EnemyDamage = 17;
                 AddMoney = 10;
                 AddScore = 1000;
                 break;
             case DifficultyEnemyType.fastNineLevel:
                 Speed = 3.6f;
-                _maxHealthEnemy = 11;
-                EnemyDamage = 11;
+                _maxHealthEnemy = 18;
+                EnemyDamage = 18;
                 AddMoney = 11;
                 AddScore = 1100;
                 break;
             case DifficultyEnemyType.strongNineLevel:
                 Speed = 2.9f;
-                _maxHealthEnemy = 12;
-                EnemyDamage = 12;
+                _maxHealthEnemy = 19;
+                EnemyDamage = 19;
                 AddMoney = 12;
                 AddScore = 1200;
                 break;
             case DifficultyEnemyType.ordinaryTenLevel:
                 Speed = 2.9f;
-                _maxHealthEnemy = 11;
+                _maxHealthEnemy = 19;
                 EnemyDamage = 11;
                 AddMoney = 11;
                 AddScore = 1100;
                 break;
             case DifficultyEnemyType.fastTenLevel:
                 Speed = 4f;
-                _maxHealthEnemy = 12;
+                _maxHealthEnemy = 20;
                 EnemyDamage = 12;
                 AddMoney = 12;
                 AddScore = 1200;
                 break;
             case DifficultyEnemyType.strongTenLevel:
                 Speed = 3f;
-                _maxHealthEnemy = 15;
-                EnemyDamage = 15;
+                _maxHealthEnemy = 22;
+                EnemyDamage = 22;
                 AddMoney = 15;
                 AddScore = 1500;
                 break;

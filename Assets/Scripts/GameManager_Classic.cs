@@ -61,5 +61,13 @@ public class GameManager_Classic : MonoBehaviour
         PlayerPrefs.SetInt("RecordWave", RecordWave);
     }
 
+    public void TimeSpeedGamePlus()
+    {
+        Time.timeScale = 2f;
+    }
+    public void TimeSpeedGameNorm()
+    {
+        Time.timeScale = 1f;
+    }
 
 }
