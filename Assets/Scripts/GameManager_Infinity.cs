@@ -1,13 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-
-public class GameManager : MonoBehaviour
+public class GameManager_Infinity : MonoBehaviour
 {
-    public TextMeshProUGUI _scoreText, _ordinaryMoneyText, _currentWaveText, _buttonPause;
-   [SerializeField] private int _ordinaryMoney = 0;
-   [SerializeField] private int _score = 0;
-    private int _currentWave;
+    public TextMeshProUGUI _scoreText, _ordinaryMoneyText, _buttonPause;
+    [SerializeField] private int _ordinaryMoney = 0;
+    [SerializeField] private int _score = 0;
+ 
     private int _highScore, _recordWave;
     private SpawnManager _spawnManager;
 
@@ -17,22 +18,22 @@ public class GameManager : MonoBehaviour
     public int Score { get { return _score; } set { _score = value; } }
     /// <summary>  HighScore - лучший счёт </summary>
     public int HighScore { get { return _highScore; } set { _highScore = value; } }
-    public int RecordWave { get { return _recordWave; } set { _recordWave = value; } }
+  
 
 
     private void Awake()
     {
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
 
-        if (PlayerPrefs.HasKey("Highscore") && PlayerPrefs.HasKey("RecordWave"))
+        if (PlayerPrefs.HasKey("Highscore"))
         {
             HighScore = PlayerPrefs.GetInt("Highscore");
-            RecordWave = PlayerPrefs.GetInt("RecordWave");
+       
         }
     }
     private void Start()
     {
-        
+
         TextUIUpdate();
     }
     public void AddMoneyAndScore(int _addMoney, int _addScore)
@@ -48,34 +49,26 @@ public class GameManager : MonoBehaviour
             HighScore = Score;
         }
     }
-    void AddRecordWave()
-    {
-        if (_currentWave > RecordWave)
-        {
-            RecordWave = _currentWave;
-        }
-    }
+  
     public void FixedUpdate()
     {
-        AddRecordWave();
+      
         TextUIUpdate();
-        Save(); 
+        Save();
     }
 
     void TextUIUpdate()
     {
         _ordinaryMoneyText.text = OrdinaryMoney.ToString();
         _scoreText.text = Score.ToString();
-        _currentWaveText.text = _spawnManager.CurrentWaveIndex.ToString();
-        _currentWave = _spawnManager.CurrentWaveIndex;
+      
     }
     void Save()
     {
         PlayerPrefs.SetInt("Score", Score);
         PlayerPrefs.SetInt("SaveOrdinaryMoney", OrdinaryMoney); // передаётся значение для экрана поражение
         PlayerPrefs.SetInt("Highscore", HighScore);
-        PlayerPrefs.SetInt("RecordWave", RecordWave);
+       
     }
-
-
+    
 }

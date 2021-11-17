@@ -738,8 +738,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.2000008, y: 278.74}
-  m_SizeDelta: {x: 979.16, y: 557.48}
+  m_AnchoredPosition: {x: -1.2000008, y: 230.34}
+  m_SizeDelta: {x: 979.16, y: 654.29}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &971998818
 MonoBehaviour:
@@ -2113,9 +2113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e715bfd11671040a196bac466940ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _highScoreText: {fileID: 0}
   _ordinaryMoneyText: {fileID: 1551925540}
-  _scoreText: {fileID: 0}
   _currentWaveText: {fileID: 1517295123}
   _recordWaveText: {fileID: 1883817410}
   _adsButton: {fileID: 1109711950}
@@ -2417,7 +2415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 538.755, y: -313}
+  m_AnchoredPosition: {x: 538.23, y: -413}
   m_SizeDelta: {x: 1077.51, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1936253915

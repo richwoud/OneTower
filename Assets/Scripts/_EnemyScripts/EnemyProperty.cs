@@ -13,7 +13,7 @@ public class EnemyProperty : MonoBehaviour
     [SerializeField] private GameObject _outgoingText;
     public float Speed { get { return _speedEnemy; } set { _speedEnemy = value; } }
     public int EnemyDamage { get { return _enemyDamage; } set { _enemyDamage = value; } }
-    private GameManager _gameManager;
+    private GameManager_Classic _gameManager;
     private EnemyController _enemyController;
    
     private int _addMoney;
@@ -35,7 +35,7 @@ public class EnemyProperty : MonoBehaviour
     private void Start()
     {
         _enemyController = GetComponent<EnemyController>();
-        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameManager_Classic>();
         _currentHealthEnemy = _maxHealthEnemy;
 
     }

@@ -20,7 +20,7 @@ public class Shop : MonoBehaviour
     [SerializeField] private GameObject _shieldBtn;
     [SerializeField] private int maxUpgradeReload;
     [SerializeField] private int maxUpgradeSpeed;
-   [SerializeField] private bool shield;
+     private bool shield;
 
 
 
@@ -46,7 +46,7 @@ public class Shop : MonoBehaviour
             _speedBtn.GetComponent<Button>().interactable = false;
 
         }
-        shield = PlayerPrefs.GetInt("shield") == 1 ? true : false;
+        if(PlayerPrefs.HasKey("IsShieldActive")) shield = PlayerPrefs.GetInt("IsShieldActive") == 1 ? true : false;
 
         if (shield)
         {
@@ -84,8 +84,6 @@ public class Shop : MonoBehaviour
             GlobalSettings.IsShieldActive = true;
             PlayerPrefs.SetInt("IsShieldActive", GlobalSettings.IsShieldActive ? 1 : 0);
             PlayerPrefs.SetInt("TowerShield", _towerShield);
-            shield = true;
-            PlayerPrefs.SetInt("shield", shield ? 1: 0);
             shopBtnText[index].text = "$" + shopCosts[index].ToString();
             _shieldBtn.GetComponent<Button>().interactable = false;
 

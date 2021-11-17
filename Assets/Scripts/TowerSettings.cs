@@ -18,12 +18,12 @@ public class TowerSettings : MonoBehaviour
     [SerializeField] private int _maxTowerShield;
     [SerializeField] private int _currentTowerShield;
     [SerializeField] private AudioSource _damageTower;
- 
+    [SerializeField] private int _continueGame;
+
 
     private int _maxHealthTower;
     public int MaxHealthTower { get { return _maxHealthTower; } set { _maxHealthTower = value; } }
 
-    [SerializeField] private int _continueGame;
 
     private bool isActiveShield;
 

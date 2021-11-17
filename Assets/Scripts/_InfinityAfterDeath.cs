@@ -1,4 +1,3 @@
-
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,11 +5,11 @@ using UnityEngine.Advertisements;
 using SavePrefsName;
 using UnityEngine.UI;
 
-public class _ScriptAfterDeath : MonoBehaviour
+public class _InfinityAfterDeath : MonoBehaviour
 {
-    public TextMeshProUGUI  _ordinaryMoneyText, _currentWaveText, _recordWaveText;
-    private int _ordinaryMoney, _currentWave, _recordWave;
 
+    public TextMeshProUGUI _highScoreText, _ordinaryMoneyText, _scoreText;
+    private int _highscore, _ordinaryMoney, _score;
     [SerializeField] private Button _adsButton;
     [SerializeField] private bool _testMode = true;
     private string _gameId = "4425063";
@@ -21,14 +20,14 @@ public class _ScriptAfterDeath : MonoBehaviour
         _adsButton.interactable = Advertisement.IsReady(_rewardedVideo);
         Advertisement.Initialize(_gameId, _testMode);
 
-        _currentWave = PlayerPrefs.GetInt("CurrentWaveIndex");
         _ordinaryMoney = PlayerPrefs.GetInt("SaveOrdinaryMoney");
-        
-        _recordWave = PlayerPrefs.GetInt("RecordWave");
+        _score = PlayerPrefs.GetInt("Score");
+        _highscore = PlayerPrefs.GetInt("Highscore");
+       
 
-        _currentWaveText.text = _currentWave.ToString();
-        _recordWaveText.text = _recordWave.ToString();
-        
+       
+        _scoreText.text = _score.ToString();
+        _highScoreText.text = _highscore.ToString();
         _ordinaryMoneyText.text = $"${_ordinaryMoney}".ToString();
 
     }
@@ -51,8 +50,7 @@ public class _ScriptAfterDeath : MonoBehaviour
             _adsButton.interactable = false;
             Debug.Log("Advertisment not Ready!");
         }
-        
-        
-    }
 
+
+    }
 }

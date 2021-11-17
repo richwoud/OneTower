@@ -222,7 +222,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1847033182}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: _ScriptAfterDeath, Assembly-CSharp
         m_MethodName: OnBtnApply
         m_Mode: 1
@@ -1263,7 +1263,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1847033182}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: _ScriptAfterDeath, Assembly-CSharp
         m_MethodName: OnBtnWatchAD_AndMultiplyMoney
         m_Mode: 1
@@ -2322,14 +2322,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1847033180}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44e715bfd11671040a196bac466940ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 45af7dc80dec73f43bab852b3436db16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _highScoreText: {fileID: 1003469896}
   _ordinaryMoneyText: {fileID: 1551925540}
   _scoreText: {fileID: 1337213482}
-  _currentWaveText: {fileID: 0}
-  _recordWaveText: {fileID: 0}
   _adsButton: {fileID: 1109711950}
   _testMode: 1
 --- !u!1 &1889049860
