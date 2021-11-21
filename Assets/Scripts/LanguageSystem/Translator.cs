@@ -60,7 +60,7 @@ public class Translator : MonoBehaviour
             "Thank you for playing this game all this time. I hope you enjoyed it and had fun. Please rate the game on Google Play, " +
             "and you can also suggest improvements for the game." +
             "See you in the next updates and games!", //42
-            "Speed Game" //43
+            "Victory" //43
 
         },
         #endregion
@@ -111,7 +111,7 @@ public class Translator : MonoBehaviour
                "Поздравляю! Вы победили всех врагов и спасли этот мир от нашествия кубиков. Ваша башня готова уничтожить любого, кто бросит вызов!" +
             "Благодарю вас за то что играли в эту игру всё это время. Надеюсь Вам понравилось и было весело. Оцените пожалуйста игру в Google Play," +
             " а также можете предложить улучшения для игры. Увидимся в следующих обновлениях и играх!",
-               "Скорость игры"
+               "Победа"
           },
         #endregion
     };

@@ -56,16 +56,13 @@ public class SpawnManager : MonoBehaviour
                
                 _currentWaveIndex++;
                 _enemiesLeftToSpawn = _waves[_currentWaveIndex].WaveSettings.Enemy.Length;
-               
+                //if (_currentWaveIndex == 99 && _enemiesLeftToSpawn == 0)
+                //{
+                //    VictoryGame();s
+                //}
                 //_currentEnemyIndex = 0;
             }
-            else
-            {
-                if (_currentWaveIndex == 100 && _enemiesLeftToSpawn == 0)
-                {
-                    VictoryGame();
-                }
-            }
+            
         }
     }
     public void VictoryGame()

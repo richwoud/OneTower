@@ -63,7 +63,7 @@ public class GameManager_Classic : MonoBehaviour
 
     public void TimeSpeedGamePlus()
     {
-        Time.timeScale = 2f;
+        Time.timeScale = 100f;
     }
     public void TimeSpeedGameNorm()
     {
